@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Անրի Սահակյանի 10-ամյակ | Ծննդյան Տոն</title>
-    <meta name="description" content="Սիրով հրավիրում ենք Անրիի 10-ամյակի տոնակատարությանը">
+    <meta name="description" content="Սիրով հրավիրում ենք Անրիի 10-ամյակի ծննդյան տոնակատարությանը">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,9 +40,10 @@
             background: linear-gradient(135deg, #0f2814 0%, #1a5f1a 100%);
             color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Կանխում է հորիզոնական շարժումը */
             position: relative;
             min-height: 100vh;
+            width: 100%;
         }
 
         body::before {
@@ -79,12 +80,13 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem; /* Ազատ, լայն տեսք */
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, 
@@ -98,6 +100,7 @@
             opacity: 0.05;
             animation: rotate 20s linear infinite;
             z-index: 0;
+            pointer-events: none;
         }
 
         .football-decoration.top-right {
@@ -141,11 +144,13 @@
             position: relative;
             z-index: 2;
             animation: fadeInUp 1s ease;
+            width: 100%;
+            /* Հեռացված է խիստ max-width-ը, որպեսզի լինի ավելի լայն */
         }
 
         .hero-name {
             font-family: 'Russo One', sans-serif;
-            font-size: 5rem;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--white) 0%, var(--grass-bright) 100%);
@@ -154,11 +159,12 @@
             background-clip: text;
             text-shadow: 0 4px 20px rgba(74, 222, 74, 0.3);
             letter-spacing: 2px;
+            word-wrap: break-word;
         }
 
         .hero-age {
             font-family: 'Russo One', sans-serif;
-            font-size: 8rem;
+            font-size: clamp(4rem, 15vw, 8rem);
             color: var(--gold);
             margin: 1rem 0;
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
@@ -180,6 +186,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .hero-buttons {
@@ -243,12 +250,13 @@
             backdrop-filter: blur(10px);
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         .section-title {
             text-align: center;
             font-family: 'Russo One', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin-bottom: 3rem;
             color: var(--white);
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -259,7 +267,8 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            max-width: 900px;
+            width: 100%;
+            max-width: 1100px; /* Լայն, բայց կարգավորված */
             margin: 0 auto;
         }
 
@@ -267,7 +276,9 @@
             background: linear-gradient(135deg, rgba(26, 95, 26, 0.8), rgba(15, 40, 20, 0.9));
             padding: 2rem 1.5rem;
             border-radius: 16px;
+            flex: 1;
             min-width: 120px;
+            max-width: 220px;
             text-align: center;
             border: 2px solid rgba(74, 222, 74, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -276,7 +287,7 @@
         }
 
         .countdown-item::before {
-            content: "";
+            content: "⚽";
             position: absolute;
             top: 5px;
             right: 10px;
@@ -286,7 +297,7 @@
 
         .countdown-number {
             font-family: 'Russo One', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 900;
             color: var(--gold);
             display: block;
@@ -308,13 +319,15 @@
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, rgba(15, 40, 20, 0.95), rgba(26, 95, 26, 0.95));
+            width: 100%;
         }
 
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 1200px; /* Օպտիմալ լայնություն մեծ էկրանների համար */
             margin: 0 auto;
         }
 
@@ -328,6 +341,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .detail-card::after {
@@ -380,599 +394,4 @@
         .detail-card p {
             color: rgba(255,255,255,0.85);
             font-size: 1.05rem;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Google Maps Button */
-        .maps-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            padding: 0.9rem 1.8rem;
-            background: linear-gradient(135deg, var(--grass-bright), var(--grass-light));
-            color: var(--black);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(74, 222, 74, 0.4);
-            border: 2px solid transparent;
-        }
-
-        .maps-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(74, 222, 74, 0.6);
-            background: linear-gradient(135deg, var(--grass-light), var(--grass-bright));
-        }
-
-        /* RSVP Section with Form */
-        .rsvp-section {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, rgba(26, 95, 26, 0.95), rgba(15, 40, 20, 0.98));
-            position: relative;
-            z-index: 2;
-        }
-
-        .rsvp-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .rsvp-text {
-            text-align: center;
-            font-size: 1.2rem;
-            opacity: 0.9;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
-
-        /* Form Styles */
-        .rsvp-form {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-            padding: 3rem 2.5rem;
-            border-radius: 24px;
-            border: 2px solid rgba(74, 222, 74, 0.3);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-family: 'Russo One', sans-serif;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-group label i {
-            color: var(--grass-bright);
-            margin-right: 0.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(74, 222, 74, 0.3);
-            border-radius: 12px;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--grass-bright);
-            background: rgba(0, 0, 0, 0.4);
-            box-shadow: 0 0 20px rgba(74, 222, 74, 0.2);
-        }
-
-        .form-control::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
-
-        .guest-counters {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .counter-box {
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(74, 222, 74, 0.3);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .counter-box:hover {
-            border-color: var(--grass-bright);
-            transform: translateY(-3px);
-        }
-
-        .counter-box label {
-            display: block;
-            font-family: 'Russo One', sans-serif;
-            font-size: 1rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .counter-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .counter-btn {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--grass-bright), var(--grass-light));
-            color: var(--black);
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: 900;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .counter-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(74, 222, 74, 0.4);
-        }
-
-        .counter-btn:active {
-            transform: scale(0.95);
-        }
-
-        .counter-value {
-            font-family: 'Russo One', sans-serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            min-width: 60px;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1.3rem;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-family: 'Russo One', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        .submit-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 2rem;
-            position: relative;
-            z-index: 2;
-            border-top: 1px solid rgba(74, 222, 74, 0.2);
-        }
-
-        .footer-football {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: rotate 10s linear infinite;
-            display: inline-block;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-15px); }
-            60% { transform: translateX(-50%) translateY(-8px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-image {
-                width: 220px;
-                height: 220px;
-            }
-
-            .hero-name {
-                font-size: 3rem;
-            }
-            
-            .hero-age {
-                font-size: 5rem;
-            }
-
-            .countdown-item {
-                min-width: 90px;
-                padding: 1.5rem 1rem;
-            }
-            
-            .countdown-number {
-                font-size: 2.2rem;
-            }
-
-            .guest-counters {
-                grid-template-columns: 1fr;
-            }
-
-            .rsvp-form {
-                padding: 2rem 1.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                justify-content: center;
-            }
-            
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.85rem;
-            }
-
-            .maps-btn {
-                font-size: 0.85rem;
-                padding: 0.8rem 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="grass-stripes"></div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="football-decoration top-right"></div>
-        <div class="football-decoration bottom-left">⚽</div>
-        
-        <div class="hero-badge">
-            <i class="fas fa-trophy"></i>
-            ՆՆԴՅԱՆ ՏՈՆԱԿԱԱՐՈՒԹՈՒՆ
-            <i class="fas fa-trophy"></i>
-        </div>
-        
-        <div class="hero-content">
-            <img src="https://cdn.shopify.com/s/files/1/0668/6690/5151/files/Anri2.jpg?v=1784999071" alt="Անրի Սահակյան" class="hero-image">
-            
-            <h1 class="hero-name">ԱՆԻ ՍԱՀԱԿՅԱՆ</h1>
-            <div class="hero-age">10</div>
-            <p class="hero-subtitle">⚽ ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
-            <p class="hero-date">
-                <i class="far fa-calendar-alt"></i>
-                2026 թ. Հուլիսի 29 | 18:00
-                <i class="far fa-calendar-alt"></i>
-            </p>
-            
-            <div class="hero-buttons">
-                <a href="#details" class="btn btn-primary">
-                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՆԵՐ
-                </a>
-                <a href="#rsvp" class="btn btn-whatsapp">
-                    <i class="fas fa-clipboard-list"></i> ՀԱՏԱՏԵԼ
-                </a>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Countdown Section -->
-    <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
-        <div class="countdown-container" id="countdown">
-            <div class="countdown-item">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">ՕՐ</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">ԺԱՄ</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">ՐՈՊԵ</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">ՎԱՅԿՅԱՆ</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Details Section -->
-    <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
-        <div class="details-grid">
-            <div class="detail-card">
-                <div class="detail-icon">
-                    <i class="far fa-calendar-alt"></i>
-                </div>
-                <h3>ՐԱՑՈՒՅՑ</h3>
-                <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ժամը 18:00-ին</p>
-            </div>
-            
-            <div class="detail-card">
-                <div class="detail-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>ՈՐՏԵՂ</h3>
-                <p>Wine Corner<br>ք. Արտաշատ<br>(Կա մեծ կայանատեղի)</p>
-            </div>
-            
-            <div class="detail-card">
-                <div class="detail-icon">
-                    <i class="fas fa-directions"></i>
-                </div>
-                <h3>ԻՆՉՊ՞Ս ՀԱՍՆԵԼ</h3>
-                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                    Երևանից 25 կմ հարավ<br>
-                    Արտաշատ քաղաք
-                </p>
-                <a href="https://maps.app.goo.gl/A7XSEtNrUai4ECUh9?g_st=iw" target="_blank" class="maps-btn">
-                    <i class="fas fa-location-arrow"></i> ԻՆՉՊԵՍ ՀԱՍՆԵԼ
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP Section with Form -->
-    <section class="rsvp-section" id="rsvp">
-        <div class="rsvp-container">
-            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՆԸ ⚽</h2>
-            <p class="rsvp-text">
-                Սիրով սպասում ենք եզ մեր ծննդյան տոնակատարությանը։<br>
-                Խնդրում ենք րացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
-            </p>
-            
-            <form class="rsvp-form" id="rsvpForm">
-                <div class="form-group">
-                    <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ Արմեն Պետրոսյան" required>
-                </div>
-
-                <div class="guest-counters">
-                    <div class="counter-box">
-                        <label><i class="fas fa-user-tie"></i> Մեծահասակներ</label>
-                        <div class="counter-controls">
-                            <button type="button" class="counter-btn" onclick="updateCount('adults', -1)">−</button>
-                            <span class="counter-value" id="adultsCount">0</span>
-                            <button type="button" class="counter-btn" onclick="updateCount('adults', 1)">+</button>
-                        </div>
-                    </div>
-
-                    <div class="counter-box">
-                        <label><i class="fas fa-child"></i> Երեխաներ</label>
-                        <div class="counter-controls">
-                            <button type="button" class="counter-btn" onclick="updateCount('children', -1)">−</button>
-                            <span class="counter-value" id="childrenCount">0</span>
-                            <button type="button" class="counter-btn" onclick="updateCount('children', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն (կամավոր)</label>
-                    <textarea class="form-control form-textarea" id="guestComment" placeholder="Ալերգիա, հատուկ ցանկություններ կամ այլ նշումներ..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <i class="fab fa-whatsapp"></i> ՈՒՂԱՐԿԵԼ WHATSAPP-ՈՎ
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-football">⚽</div>
-        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
-        <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր րավունքները պաշտպանված են</p>
-    </footer>
-
-    <script>
-        // Countdown Timer
-        const eventDate = new Date("2026-07-29T18:00:00").getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = eventDate - now;
-
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = 
-                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԵՆ ՍԿՍՎԵԼ Է! 🎉⚽</h3>";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // Guest Counter
-        let guestCounts = {
-            adults: 0,
-            children: 0
-        };
-
-        function updateCount(type, change) {
-            guestCounts[type] += change;
-            
-            if (guestCounts[type] < 0) {
-                guestCounts[type] = 0;
-            }
-            
-            if (type === 'adults' && guestCounts[type] > 100) {
-                guestCounts[type] = 100;
-            }
-            
-            if (type === 'children' && guestCounts[type] > 100) {
-                guestCounts[type] = 100;
-            }
-            
-            document.getElementById(type + 'Count').innerText = guestCounts[type];
-            
-            const counterElement = document.getElementById(type + 'Count');
-            counterElement.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                counterElement.style.transform = 'scale(1)';
-            }, 200);
-        }
-
-        // Form Submit - WhatsApp
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const guestName = document.getElementById('guestName').value.trim();
-            const adults = guestCounts.adults;
-            const children = guestCounts.children;
-            const comment = document.getElementById('guestComment').value.trim();
-            
-            if (adults === 0 && children === 0) {
-                alert('Խնդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
-                return;
-            }
-            
-            if (!guestName) {
-                alert('Խնդրում ենք լրացնել ձեր անունը');
-                return;
-            }
-            
-            let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
-            message += `👤 *Անուն:* ${guestName}\n`;
-            message += `👨‍👩👧‍👦 *Մեծահասակներ:* ${adults}\n`;
-            message += `👶 *րեխաներ:* ${children}\n`;
-            message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
-            
-            if (comment) {
-                message += `💬 *Մեկնաբանություն:* ${comment}\n`;
-            }
-            
-            message += `\n Հուլիսի 29, 2026 | 18:00`;
-            
-            const phoneNumber = '37477691100';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappURL, '_blank');
-            alert('✅ նորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
-        });
-
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.detail-card, .countdown-item, .counter-box').forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)";
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+            line-height: 
