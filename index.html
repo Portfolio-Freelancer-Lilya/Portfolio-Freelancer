@@ -76,15 +76,15 @@
             z-index: 1;
         }
 
-        /* Hero Section */
+        /* Hero Section - ԿԱՐՃԱՑՎԱԾ */
         .hero {
-            min-height: 100vh;
+            min-height: 85vh; /* Փոքրացրել եմ 100vh-ից 85vh */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem 2rem; /* Պադինգը փոքրացրել եմ */
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, 
@@ -121,20 +121,19 @@
             border-radius: 50px;
             font-weight: 800;
             font-size: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Փոքրացրել եմ */
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
             animation: fadeInDown 1s ease;
         }
 
-        /* --- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԻ ՈՃԵՐԸ --- */
         .hero-image {
-            width: 280px;
-            height: 280px;
+            width: 250px; /* Փոքրացրել եմ 280px-ից */
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--gold);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.4);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem; /* Փոքրացրել եմ */
             animation: fadeInUp 1s ease 0.2s backwards;
         }
 
@@ -146,7 +145,7 @@
 
         .hero-name {
             font-family: 'Russo One', sans-serif;
-            font-size: 5rem;
+            font-size: 4.5rem; /* ոքրացրել եմ */
             font-weight: 900;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--white) 0%, var(--grass-bright) 100%);
@@ -159,24 +158,24 @@
 
         .hero-age {
             font-family: 'Russo One', sans-serif;
-            font-size: 8rem;
+            font-size: 7rem; /* Փոքրացրել եմ */
             color: var(--gold);
-            margin: 1rem 0;
+            margin: 0.8rem 0; /* Փոքրացրել եմ */
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
             animation: pulse 2s ease-in-out infinite;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.4rem; /* ոքրացրել եմ */
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Փոքրացրել եմ */
             color: var(--grass-bright);
         }
 
         .hero-date {
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* Փոքրացրել եմ */
             opacity: 0.9;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem; /* ոքրացրել եմ */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -228,7 +227,7 @@
 
         .scroll-indicator {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px; /* Փոքրացրել եմ */
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
@@ -237,9 +236,9 @@
             opacity: 0.7;
         }
 
-        /* Countdown Section */
+        /* Countdown Section - ԱՎԵԼԻ ԼԱՅՆ */
         .countdown-section {
-            padding: 4rem 2rem;
+            padding: 4rem 1rem; /* Ավելի քիչ padding կողքերից */
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             position: relative;
@@ -253,27 +252,31 @@
             margin-bottom: 3rem;
             color: var(--white);
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            padding: 0 1rem;
         }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem; /* Փոքրացրել եմ gap-ը */
             flex-wrap: wrap;
-            max-width: 900px;
+            max-width: 1000px; /* Ավելի լայն */
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .countdown-item {
             background: linear-gradient(135deg, rgba(26, 95, 26, 0.8), rgba(15, 40, 20, 0.9));
             padding: 2rem 1.5rem;
             border-radius: 16px;
-            min-width: 120px;
+            min-width: 110px; /* Փոքրացրել եմ */
             text-align: center;
             border: 2px solid rgba(74, 222, 74, 0.3);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
+            flex: 1; /* Ավելացրել եմ՝ որ լայնանան */
+            max-width: 180px;
         }
 
         .countdown-item::before {
@@ -303,9 +306,9 @@
             font-weight: 600;
         }
 
-        /* Details Section */
+        /* Details Section - ԱՎԼԻ ԼԱՅՆ */
         .details-section {
-            padding: 5rem 2rem;
+            padding: 5rem 1rem; /* Ավելի քիչ padding կողքերից */
             position: relative;
             z-index: 2;
             background: linear-gradient(180deg, rgba(15, 40, 20, 0.95), rgba(26, 95, 26, 0.95));
@@ -313,10 +316,11 @@
 
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ավելի լայն քարտեր */
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1200px; /* Ավելի այն */
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .detail-card {
@@ -386,17 +390,18 @@
             z-index: 1;
         }
 
-        /* RSVP Section with Form */
+        /* RSVP Section - ԱՎԵԼԻ ԼԱՅՆ */
         .rsvp-section {
-            padding: 5rem 2rem;
+            padding: 5rem 1rem;
             background: linear-gradient(135deg, rgba(26, 95, 26, 0.95), rgba(15, 40, 20, 0.98));
             position: relative;
             z-index: 2;
         }
 
         .rsvp-container {
-            max-width: 700px;
+            max-width: 800px; /* Ավելի լայն */
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .rsvp-text {
@@ -569,7 +574,7 @@
             background: rgba(0, 0, 0, 0.5);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1rem;
             position: relative;
             z-index: 2;
             border-top: 1px solid rgba(74, 222, 74, 0.2);
@@ -623,26 +628,30 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh; /* Մոբայլում մի փոքր ավելի երկար */
+            }
+
             .hero-image {
-                width: 220px;
-                height: 220px;
+                width: 200px;
+                height: 200px;
             }
 
             .hero-name {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             .hero-age {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
 
             .countdown-item {
-                min-width: 90px;
+                min-width: 80px;
                 padding: 1.5rem 1rem;
             }
             
             .countdown-number {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .guest-counters {
@@ -680,21 +689,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="football-decoration top-right">⚽</div>
-        <div class="football-decoration bottom-left">⚽</div>
+        <div class="football-decoration bottom-left"></div>
         
         <div class="hero-badge">
             <i class="fas fa-trophy"></i>
-            ԾՆՆԴՅԱՆ ՏՈՆԱԿԱՏԱՐՈՒԹՅՈՒՆ
+            ԾՆԴՅԱՆ ՈՆԱԿԱՏԱՐՈՒԹՅՈՒՆ
             <i class="fas fa-trophy"></i>
         </div>
         
         <div class="hero-content">
-            <!-- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԸ ԱՅՍՏԵՂ -->
             <img src="https://cdn.shopify.com/s/files/1/0668/6690/5151/files/Anri2.jpg?v=1784999071" alt="Անրի Սահակյան" class="hero-image">
             
-            <h1 class="hero-name">ԱՆՐԻ ՍԱՀԱԿՅԱՆ</h1>
+            <h1 class="hero-name">ԱՆՐ ՍԱՀԱԿԱՆ</h1>
             <div class="hero-age">10</div>
-            <p class="hero-subtitle"> ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
+            <p class="hero-subtitle"> ԾՆՆԴԱՆ ՕՐ ⚽</p>
             <p class="hero-date">
                 <i class="far fa-calendar-alt"></i>
                 2026 թ. Հուլիսի 29 | 18:00
@@ -703,10 +711,10 @@
             
             <div class="hero-buttons">
                 <a href="#details" class="btn btn-primary">
-                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՍՆԵՐ
+                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՆԵՐ
                 </a>
                 <a href="#rsvp" class="btn btn-whatsapp">
-                    <i class="fas fa-clipboard-list"></i> ՀԱՍՏԱՏԵԼ
+                    <i class="fas fa-clipboard-list"></i> ՀԱՏԱՏԵԼ
                 </a>
             </div>
         </div>
@@ -718,7 +726,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՆԸ ՄՆԱՑԵԼ Է </h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -730,25 +738,25 @@
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">ՐՈՊԵ</span>
+                <span class="countdown-label">ՈՊԵ</span>
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">ՎԱՅՐԿՅԱՆ</span>
+                <span class="countdown-label">ՎԱՐԿՅԱՆ</span>
             </div>
         </div>
     </section>
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ՄԻՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="far fa-calendar-alt"></i>
                 </div>
-                <h3>ՕՐԱՑՈՒՅՑ</h3>
-                <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ժամը 18:00-ին</p>
+                <h3>ՐԱՑՈՒՅՑ</h3>
+                <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ամը 18:00-ին</p>
             </div>
             
             <div class="detail-card">
@@ -763,8 +771,8 @@
                 <div class="detail-icon">
                     <i class="fas fa-tshirt"></i>
                 </div>
-                <h3>ԶԳԵՍՏԻ ԿՈԴ</h3>
-                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽👟</p>
+                <h3>ԶԳԵՏԻ ԿԴ</h3>
+                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽</p>
             </div>
         </div>
     </section>
@@ -772,16 +780,16 @@
     <!-- RSVP Section with Form -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
+            <h2 class="section-title">⚽ ՀԱՏԱՏԵԼ ՄԱՍՆԱՑՈՒԹՈՒՆԸ </h2>
             <p class="rsvp-text">
-                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
+                Սիրով սպասում ենք Ձեզ մեր ննդյան տոնակատարությանը։<br>
                 Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="րինակ՝ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -810,7 +818,7 @@
                 </div>
 
                 <button type="submit" class="submit-btn">
-                    <i class="fab fa-whatsapp"></i> ՈՒՂԱՐԿԵԼ WHATSAPP-ՈՎ
+                    <i class="fab fa-whatsapp"></i> ՈՒՂԱԿԵԼ WHATSAPP-ՈՎ
                 </button>
             </form>
         </div>
@@ -818,15 +826,12 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-football">⚽</div>
+        <div class="footer-football"></div>
         <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
         <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
     </footer>
 
     <script>
-        // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
-        // ==========================================
         const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
         function updateCountdown() {
@@ -835,7 +840,7 @@
 
             if (distance < 0) {
                 document.getElementById("countdown").innerHTML = 
-                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍԿՍՎԵԼ Է! 🎉⚽</h3>";
+                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆ ԱՐԴԵՆ ԿՍՎԵԼ Է! 🎉⚽</h3>";
                 return;
             }
 
@@ -853,9 +858,6 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // ==========================================
-        // RSVP FORM - ՀՅՈՒՐԵՐԻ ՔԱՆԱԿԻ ՀԱՇՎԱՐԿ
-        // ==========================================
         let guestCounts = {
             adults: 0,
             children: 0
@@ -885,7 +887,6 @@
             }, 200);
         }
 
-        // Form Submit - WhatsApp ուղարկում
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -900,15 +901,15 @@
             }
             
             if (!guestName) {
-                alert('Խնդրում ենք լրացնել ձեր անունը');
+                alert('Խնդրում ենք րացնել ձեր անունը');
                 return;
             }
             
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
-            message += `👨‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
-            message += `👶 *Երեխաներ:* ${children}\n`;
-            message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
+            message += `👨‍👩👧‍👦 *Մեծահասակներ:* ${adults}\n`;
+            message += ` *Երեխաներ:* ${children}\n`;
+            message += ` *Ընդհանուր:* ${adults + children} հոգի\n`;
             
             if (comment) {
                 message += `💬 *Մեկնաբանություն:* ${comment}\n`;
@@ -920,10 +921,9 @@
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappURL, '_blank');
-            alert('✅ Շնորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
+            alert('✅ նորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
         });
 
-        // Scroll Animation Observer
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
