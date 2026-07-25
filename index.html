@@ -126,6 +126,18 @@
             animation: fadeInDown 1s ease;
         }
 
+        /* --- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԻ ՈՃԵՐԸ --- */
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.4);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -611,6 +623,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero-image {
+                width: 220px;
+                height: 220px;
+            }
+
             .hero-name {
                 font-size: 3rem;
             }
@@ -647,7 +664,6 @@
                 justify-content: center;
             }
             
-            /* Հետհաշվարկի համար մոբայլի դեպքում ոչ այնքան մեծ թվեր */
             .countdown-number {
                 font-size: 1.8rem;
             }
@@ -673,6 +689,9 @@
         </div>
         
         <div class="hero-content">
+            <!-- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԸ ԱՅՍՏԵՂ -->
+            <img src="https://cdn.shopify.com/s/files/1/0668/6690/5151/files/Anri2.jpg?v=1784999071" alt="Անրի Սահակյան" class="hero-image">
+            
             <h1 class="hero-name">ԱՆՐԻ ՍԱՀԱԿՅԱՆ</h1>
             <div class="hero-age">10</div>
             <p class="hero-subtitle"> ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
@@ -799,7 +818,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-football"></div>
+        <div class="footer-football">⚽</div>
         <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
         <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
     </footer>
@@ -845,25 +864,20 @@
         function updateCount(type, change) {
             guestCounts[type] += change;
             
-            // Չի կարող բացասական լինել
             if (guestCounts[type] < 0) {
                 guestCounts[type] = 0;
             }
             
-            // Մեծահասակների առավելագույնը 100
             if (type === 'adults' && guestCounts[type] > 100) {
                 guestCounts[type] = 100;
             }
             
-            // Երեխաների առավելագույնը 100
             if (type === 'children' && guestCounts[type] > 100) {
                 guestCounts[type] = 100;
             }
             
-            // Թարմացնել ցուցադրությունը
             document.getElementById(type + 'Count').innerText = guestCounts[type];
             
-            // Անիմացիա
             const counterElement = document.getElementById(type + 'Count');
             counterElement.style.transform = 'scale(1.2)';
             setTimeout(() => {
@@ -880,22 +894,19 @@
             const children = guestCounts.children;
             const comment = document.getElementById('guestComment').value.trim();
             
-            // Ստուգել, որ գոնե մեկ հյուր կա
             if (adults === 0 && children === 0) {
                 alert('Խնդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
                 return;
             }
             
-            // Ստուգել անունը
             if (!guestName) {
                 alert('Խնդրում ենք լրացնել ձեր անունը');
                 return;
             }
             
-            // ՈՒՂՂԱՐԿԵԼ WhatsApp հաղորդագրություն
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
-            message += `‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
+            message += `👨‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
             message += `👶 *Երեխաներ:* ${children}\n`;
             message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
             
@@ -905,16 +916,10 @@
             
             message += `\n📅 Հուլիսի 29, 2026 | 18:00`;
             
-            // Փոխարինեք ձեր իրական հեռախոսահամարով (առանց + նշանի)
             const phoneNumber = '37477691100';
-            
-            // Ստեղծել WhatsApp հղում
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
-            // Բացել WhatsApp-ը նոր tab-ում
             window.open(whatsappURL, '_blank');
-            
-            // Ցույց տալ հաջողության հաղորդագրություն
             alert('✅ Շնորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
         });
 
