@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ծննդյան Հրավեր | Արմեն</title>
-    <meta name="description" content="Սիրով հրավիրում ենք ձեզ միանալ մեր տոնակատարությանը">
+    <title>Անրի Սահակյանի 10-ամյակ | Ֆուտբոլային Տոն</title>
+    <meta name="description" content="Սիրով հրավիրում ենք Անրիի 10-ամյակի տոնակատարությանը">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #0f172a; /* Մուգ կապույտ */
-            --accent-color: #3b82f6; /* Վառ կապույտ */
-            --gold-color: #d4af37; /* Ոսկեգույն */
-            --bg-color: #f8fafc;
-            --text-color: #334155;
+            --grass-dark: #1a5f1a;
+            --grass-light: #2d8a2d;
+            --grass-bright: #4ade4a;
             --white: #ffffff;
+            --black: #1a1a1a;
+            --gold: #FFD700;
+            --accent: #00ff88;
         }
 
         * {
@@ -36,67 +37,182 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background: linear-gradient(135deg, #0f2814 0%, #1a5f1a 100%);
+            color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Football Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(74, 222, 74, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Grass Stripes Effect */
+        .grass-stripes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 50px,
+                rgba(255,255,255,0.03) 50px,
+                rgba(255,255,255,0.03) 100px
+            );
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(59, 130, 246, 0.8)), 
-                        url('https://images.unsplash.com/photo-1530103862676-de3c9da59af7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--white);
             padding: 2rem;
             position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, 
+                rgba(26, 95, 26, 0.9) 0%, 
+                rgba(15, 40, 20, 0.95) 100%);
         }
 
-        .hero::before {
-            content: '';
+        .football-decoration {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            font-size: 15rem;
+            opacity: 0.05;
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+
+        .football-decoration.top-right {
+            top: -50px;
+            right: -50px;
+        }
+
+        .football-decoration.bottom-left {
+            bottom: -50px;
+            left: -50px;
+            animation-direction: reverse;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: var(--black);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            animation: fadeInDown 1s ease;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .invitation-label {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold-color);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
         }
 
         .hero-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 700;
+            font-family: 'Russo One', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--grass-bright) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(74, 222, 74, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero-age {
+            font-family: 'Russo One', sans-serif;
+            font-size: 8rem;
+            color: var(--gold);
+            margin: 1rem 0;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            line-height: 1.1;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            color: var(--grass-bright);
         }
 
         .hero-date {
             font-size: 1.3rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
             opacity: 0.9;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--grass-bright), var(--grass-light));
+            color: var(--black);
+            box-shadow: 0 6px 20px rgba(74, 222, 74, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(74, 222, 74, 0.6);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
         }
 
         .scroll-indicator {
@@ -105,16 +221,27 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: var(--white);
-            font-size: 1.5rem;
+            font-size: 2rem;
+            color: var(--grass-bright);
             opacity: 0.7;
         }
 
         /* Countdown Section */
         .countdown-section {
             padding: 4rem 2rem;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
             text-align: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .countdown-container {
@@ -122,56 +249,55 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .countdown-item {
-            background: var(--bg-color);
-            padding: 1.5rem;
-            border-radius: 12px;
-            min-width: 100px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-bottom: 3px solid var(--accent-color);
+            background: linear-gradient(135deg, rgba(26, 95, 26, 0.8), rgba(15, 40, 20, 0.9));
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            min-width: 120px;
+            text-align: center;
+            border: 2px solid rgba(74, 222, 74, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item::before {
+            content: "⚽";
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.2;
         }
 
         .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-family: 'Russo One', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
             display: block;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .countdown-label {
-            font-size: 0.9rem;
-            color: var(--text-color);
+            font-size: 0.95rem;
+            color: var(--grass-bright);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-top: 0.5rem;
+            font-weight: 600;
         }
 
         /* Details Section */
         .details-section {
             padding: 5rem 2rem;
-            background: var(--bg-color);
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
             position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold-color);
-            margin: 1rem auto 0;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(15, 40, 20, 0.95), rgba(26, 95, 26, 0.95));
         }
 
         .details-grid {
@@ -183,60 +309,87 @@
         }
 
         .detail-card {
-            background: var(--white);
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
             padding: 2.5rem 2rem;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            border: 2px solid rgba(74, 222, 74, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 222, 74, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .detail-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: var(--grass-bright);
+            box-shadow: 0 15px 40px rgba(74, 222, 74, 0.3);
+        }
+
+        .detail-card:hover::after {
+            opacity: 1;
         }
 
         .detail-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-color);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--grass-bright), var(--grass-light));
+            color: var(--black);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(74, 222, 74, 0.4);
+            position: relative;
+            z-index: 1;
         }
 
         .detail-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
         }
 
         .detail-card p {
-            color: var(--text-color);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: rgba(255,255,255,0.85);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
         }
 
         /* RSVP Section */
         .rsvp-section {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--primary-color), #1e293b);
-            color: var(--white);
+            background: linear-gradient(135deg, rgba(26, 95, 26, 0.95), rgba(15, 40, 20, 0.98));
             text-align: center;
-        }
-
-        .rsvp-section .section-title {
-            color: var(--white);
+            position: relative;
+            z-index: 2;
         }
 
         .rsvp-text {
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+            line-height: 1.8;
         }
 
         .rsvp-buttons {
@@ -246,56 +399,40 @@
             flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: var(--accent-color);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-
         /* Footer */
         footer {
-            background: #020617;
+            background: rgba(0, 0, 0, 0.5);
             color: var(--white);
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            padding: 2.5rem 2rem;
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(74, 222, 74, 0.2);
+        }
+
+        .footer-football {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: rotate 10s linear infinite;
+            display: inline-block;
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -305,8 +442,18 @@
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* Responsive */
@@ -315,21 +462,17 @@
                 font-size: 3rem;
             }
             
-            .countdown-container {
-                gap: 1rem;
+            .hero-age {
+                font-size: 5rem;
             }
-            
+
             .countdown-item {
-                min-width: 70px;
-                padding: 1rem;
+                min-width: 90px;
+                padding: 1.5rem 1rem;
             }
             
             .countdown-number {
-                font-size: 1.8rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.75rem;
+                font-size: 2.2rem;
             }
 
             .rsvp-buttons {
@@ -339,24 +482,46 @@
 
             .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
                 justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+    <div class="grass-stripes"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="invitation-label">Սիրով հրավիրում ենք</div>
-            <h1 class="hero-name">Արմենի<br>Ծննդյան Տոնը</h1>
-            <p class="hero-date">2024 թ. Դեկտեմբերի 25 | 18:00</p>
-            <a href="#details" class="btn btn-primary" style="margin-top: 1rem;">
-                Մանրամասներ <i class="fas fa-chevron-down"></i>
-            </a>
+        <div class="football-decoration top-right"></div>
+        <div class="football-decoration bottom-left">⚽</div>
+        
+        <div class="hero-badge">
+            <i class="fas fa-trophy"></i>
+            ՖՈՒԲՈԼԱՅԻՆ ՏՈՆԱԿԱՏԱՐՈՒԹՅՈՆ
+            <i class="fas fa-trophy"></i>
         </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-name">ԱՆՐԻ ՍԱՀԱԿԱՆ</h1>
+            <div class="hero-age">10</div>
+            <p class="hero-subtitle">⚽ ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
+            <p class="hero-date">
+                <i class="far fa-calendar-alt"></i>
+                2024 թ. Դեկտեմբերի 25 | 15:00
+                <i class="far fa-calendar-alt"></i>
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#details" class="btn btn-primary">
+                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՍՆԵՐ
+                </a>
+                <a href="#rsvp" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> ՀԱՍՏԱՏԵԼ
+                </a>
+            </div>
+        </div>
+        
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -364,92 +529,97 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">Մինչև Տոնը Մնացել է</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">Օր</span>
+                <span class="countdown-label">Ր</span>
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">Ժամ</span>
+                <span class="countdown-label">ԺԱՄ</span>
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">Րոպե</span>
+                <span class="countdown-label">ՐՈՊԵ</span>
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">Վայրկյան</span>
+                <span class="countdown-label">ՎԱՅՐԿՅԱՆ</span>
             </div>
         </div>
     </section>
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title">Միջոցառման Մանրամասներ</h2>
+        <h2 class="section-title">️ ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="far fa-calendar-alt"></i>
                 </div>
-                <h3>Երբ</h3>
-                <p>Կիրակի, Դեկտեմբերի 25, 2024<br>Սկիզբը՝ ժամը 18:00-ին</p>
+                <h3>ՐԲ</h3>
+                <p>Կիրակի, եկտեմբերի 25, 2024<br>կիզբը՝ ամը 15:00-ին<br>Ֆուտբոլային աղեր և մրցույթներ</p>
             </div>
             
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <h3>Որտեղ</h3>
-                <p>Ռեստորան "Արարատ"<br>ք. Երևան, Աբովյան փող. 15</p>
+                <h3>ՈՐՏԵՂ</h3>
+                <p>ուտբոլային Ակադեմիա<br>ք. Երևան, Հասցե<br>(Կայանատեղի կա)</p>
             </div>
             
             <div class="detail-card">
                 <div class="detail-icon">
-                    <i class="fas fa-gift"></i>
+                    <i class="fas fa-tshirt"></i>
                 </div>
-                <h3>Զգեստի կոդ</h3>
-                <p>Էլեգանտ / Smart Casual<br>Սպասում ենք ձեզ լավ տրամադրությամբ!</p>
+                <h3>ԳԵՍՏԻ ԿՈԴ</h3>
+                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>👟</p>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
-    <section class="rsvp-section">
-        <h2 class="section-title">Հաստատել Մասնակցությունը</h2>
-        <p class="rsvp-text">Խնդրում ենք մինչև Դեկտեմբերի 20-ը հայտնել ձեր մասնակցության մասին, որպեսզի կարողանանք համապատասխանաբար նախապատրաստվել։</p>
+    <section class="rsvp-section" id="rsvp">
+        <h2 class="section-title"> ՀԱՍՏԱՏԼ ՄԱՍՆԱԿՑՈՒՅՈՒՆԸ ⚽</h2>
+        <p class="rsvp-text">
+            իրով սպասում ենք ձեզ մեր ֆուտբոլային տոնակատարությանը։<br>
+            Խնդրում ենք մինչև <strong>Դեկտեմբերի 20-ը</strong> հայտնել եր մասնակցության մասին։
+        </p>
         
         <div class="rsvp-buttons">
-            <!-- Փոխարինեք հեռախոսահամարը ձեր իրական համարով (օրինակ՝ 37499123456) -->
-            <a href="https://wa.me/37499123456?text=Ողջույն%2C%20ես%20հաստատում%20եմ%20իմ%20մասնակցությունը%20Արմենի%20ծննդյան%20տոնին։" target="_blank" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Հաստատել WhatsApp-ով
+            <!-- Փոխարինեք հեռախոսահամարը եր իրական համարով -->
+            <a href="https://wa.me/37499123456?text=Ողջույն%2C%20ես%20հաստատում%20եմ%20իմ%20մասնակցությունը%20Անրիի%2010-ամյակի%20տոնին%20⚽" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> ԳՐԵԼ WHATSAPP-ՈՎ
             </a>
             <a href="tel:+37499123456" class="btn btn-primary">
-                <i class="fas fa-phone-alt"></i> Զանգահարել
+                <i class="fas fa-phone-alt"></i> ԶԱՆԳԱՀԱՐԵԼ
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Սպասում ենք ձեզ մեր տոնակատարությանը։ 💙</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2024 Բոլոր իրավունքները պաշտպանված են</p>
+        <div class="footer-football">⚽</div>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք ձեզ մեր ֆուտբոլային տոնին!</p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">© 2024 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
     </footer>
 
     <script>
         // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
-        // Ձևաչափը՝ "Տարի-Ամիս-Օր Ժամ:Րոպե:Վայրկյան"
+        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
+        // Ձևաչափը՝ "Տարի-Ամիս-ՕրTԺամ:Րոպե:Վայրկյան"
         // ==========================================
-        const eventDate = new Date("2024-12-25T18:00:00").getTime();
+        const eventDate = new Date("2024-12-25T15:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = eventDate - now;
 
             if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "<h3 style='color: #3b82f6; font-size: 1.5rem;'>Տոնը արդեն սկսվել է! 🎉</h3>";
+                document.getElementById("countdown").innerHTML = 
+                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍԿՍՎԵԼ Է! 🎉</h3>";
                 return;
             }
 
@@ -466,7 +636,7 @@
 
         // Թարմացնել յուրաքանչյուր վայրկյան
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Անմիջապես կանչել սկզբնական բեռնման ժամանակ
+        updateCountdown();
 
         // Scroll Animation Observer
         const observerOptions = {
@@ -486,8 +656,8 @@
         // Կիրառել անիմացիան քարտերի վրա
         document.querySelectorAll('.detail-card, .countdown-item').forEach(el => {
             el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.6s ease-out";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)";
             observer.observe(el);
         });
     </script>
