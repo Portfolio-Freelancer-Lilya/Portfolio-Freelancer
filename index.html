@@ -42,7 +42,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            min-height: 100vh;
         }
 
         body::before {
@@ -609,7 +608,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive */
+        /* Responsive Fixes */
         @media (max-width: 768px) {
             .hero-name {
                 font-size: 3rem;
@@ -620,12 +619,16 @@
             }
 
             .countdown-item {
-                min-width: 90px;
-                padding: 1.5rem 1rem;
+                min-width: 80px;
+                padding: 1.2rem 0.8rem;
             }
             
             .countdown-number {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
             }
 
             .guest-counters {
@@ -645,15 +648,6 @@
                 width: 100%;
                 max-width: 320px;
                 justify-content: center;
-            }
-            
-            /* Հետհաշվարկի համար մոբայլի դեպքում ոչ այնքան մեծ թվեր */
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-            
-            .countdown-label {
-                font-size: 0.85rem;
             }
         }
     </style>
@@ -699,7 +693,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄԱՑԵԼ Է </h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -737,7 +731,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>ՈՐՏԵՂ</h3>
-                <p>Հոտելան Ակադեմիա<br>ք. Երևան, Հասցե<br>(Կայանատեղի կա)</p>
+                <p>Ռեստորան<br>ք. Աշտարակ, Հասցե<br>(Կայանատեղի կա)</p>
             </div>
             
             <div class="detail-card">
@@ -745,6 +739,7 @@
                     <i class="fas fa-tshirt"></i>
                 </div>
                 <h3>ԶԳԵՍՏԻ ԿՈԴ</h3>
+                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽👟</p>
             </div>
         </div>
     </section>
@@ -754,14 +749,14 @@
         <div class="rsvp-container">
             <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
             <p class="rsvp-text">
-                Սիրով սպասում ենք Ձեզ մեր ֆուտբոլային տոնակատարությանը։<br>
+                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
                 Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="րինակ՝ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -785,7 +780,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն (կամավոր)</label>
+                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն </label>
                     <textarea class="form-control form-textarea" id="guestComment" placeholder="Ալերգիա, հատուկ ցանկություններ կամ այլ նշումներ..."></textarea>
                 </div>
 
@@ -799,13 +794,13 @@
     <!-- Footer -->
     <footer>
         <div class="footer-football"></div>
-        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ֆուտբոլային տոնին!</p>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
         <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
     </footer>
 
     <script>
         // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
+        // ՀԵՏՀԱՇՎԱՐԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
         // ==========================================
         const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
@@ -891,7 +886,7 @@
                 return;
             }
             
-            // ՈՒՂԱՐԿԵԼ WhatsApp հաղորդագրություն
+            // ՈՒՂՂԱՐԿԵԼ WhatsApp հաղորդագրություն
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
             message += `‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
