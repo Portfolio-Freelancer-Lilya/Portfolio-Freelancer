@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Անրի Սահակյանի 10-ամյակ | Ծննդյան Տոն</title>
+    <title>Անրի ահակյանի 10-ամյակ | Ծննդյան Տոն</title>
     <meta name="description" content="Սիրով հրավիրում ենք Անրիի 10-ամյակի տոնակատարությանը">
     
     <!-- Google Fonts -->
@@ -126,7 +126,6 @@
             animation: fadeInDown 1s ease;
         }
 
-        /* --- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԻ ՈՃԵՐԸ --- */
         .hero-image {
             width: 280px;
             height: 280px;
@@ -384,6 +383,28 @@
             line-height: 1.7;
             position: relative;
             z-index: 1;
+        }
+
+        /* Google Maps Button */
+        .maps-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #4285F4, #34A853);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+        }
+
+        .maps-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
         }
 
         /* RSVP Section with Form */
@@ -684,17 +705,16 @@
         
         <div class="hero-badge">
             <i class="fas fa-trophy"></i>
-            ԾՆՆԴՅԱՆ ՏՈՆԱԿԱՏԱՐՈՒԹՅՈՒՆ
+            ԾՆՆՅԱՆ ՏՆԱԿԱՏԱՐՈՒԹՈՒՆ
             <i class="fas fa-trophy"></i>
         </div>
         
         <div class="hero-content">
-            <!-- ԱՎԵԼԱՑՎԱԾ ՆԿԱՐԸ ԱՅՍՏԵՂ -->
             <img src="https://cdn.shopify.com/s/files/1/0668/6690/5151/files/Anri2.jpg?v=1784999071" alt="Անրի Սահակյան" class="hero-image">
             
-            <h1 class="hero-name">ԱՆՐԻ ՍԱՀԱԿՅԱՆ</h1>
+            <h1 class="hero-name">ԱՆՐԻ ԱՀԱԿՅԱՆ</h1>
             <div class="hero-age">10</div>
-            <p class="hero-subtitle"> ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
+            <p class="hero-subtitle">⚽ ԾՆԴՅԱՆ ՕՐ ⚽</p>
             <p class="hero-date">
                 <i class="far fa-calendar-alt"></i>
                 2026 թ. Հուլիսի 29 | 18:00
@@ -703,7 +723,7 @@
             
             <div class="hero-buttons">
                 <a href="#details" class="btn btn-primary">
-                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՍՆԵՐ
+                    <i class="fas fa-info-circle"></i> ՄԱՐԱՄԱՍՆԵՐ
                 </a>
                 <a href="#rsvp" class="btn btn-whatsapp">
                     <i class="fas fa-clipboard-list"></i> ՀԱՍՏԱՏԵԼ
@@ -718,11 +738,11 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">ՕՐ</span>
+                <span class="countdown-label">Ր</span>
             </div>
             <div class="countdown-item">
                 <span class="countdown-number" id="hours">00</span>
@@ -741,7 +761,7 @@
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ԻՋՈՑԱՄԱՆ ՄԱՆՐԱՄԱՍՆՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
@@ -756,15 +776,19 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>ՈՐՏԵՂ</h3>
-                <p>Wine Corner<br>ք. Արտաշատ,<br>(Կա մեծ կայանատեղի)</p>
+                <p>Wine Corner<br>ք. Արտաշատ<br>(Կա մեծ կայանատեղի)</p>
+                <!-- Google Maps Button -->
+                <a href="https://maps.app.goo.gl/A7XSEtNrUai4ECUh9?g_st=iw" target="_blank" class="maps-btn">
+                    <i class="fas fa-map-marked-alt"></i> ԴԻՏԵԼ ՔԱՐՏԵԶԻ ՎՐԱ
+                </a>
             </div>
             
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="fas fa-tshirt"></i>
                 </div>
-                <h3>ԶԳԵՍՏԻ ԿՈԴ</h3>
-                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽👟</p>
+                <h3>ԶԳԵՍՏԻ ԿՈ</h3>
+                <p>պորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽</p>
             </div>
         </div>
     </section>
@@ -772,10 +796,10 @@
     <!-- RSVP Section with Form -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
+            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱՑՈՒԹՈՒՆԸ </h2>
             <p class="rsvp-text">
-                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
-                Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
+                Սիրով սպասում ենք Ձեզ մեր ննդյան տոնակատարությանը։<br>
+                Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել եր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
@@ -820,13 +844,10 @@
     <footer>
         <div class="footer-football">⚽</div>
         <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
-        <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր րավունքները պաշտպանված են</p>
     </footer>
 
     <script>
-        // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
-        // ==========================================
         const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
         function updateCountdown() {
@@ -835,7 +856,7 @@
 
             if (distance < 0) {
                 document.getElementById("countdown").innerHTML = 
-                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍԿՍՎԵԼ Է! 🎉⚽</h3>";
+                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍՍՎԵԼ Է! 🎉⚽</h3>";
                 return;
             }
 
@@ -853,9 +874,6 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // ==========================================
-        // RSVP FORM - ՀՅՈՒՐԵՐԻ ՔԱՆԱԿԻ ՀԱՇՎԱՐԿ
-        // ==========================================
         let guestCounts = {
             adults: 0,
             children: 0
@@ -885,7 +903,6 @@
             }, 200);
         }
 
-        // Form Submit - WhatsApp ուղարկում
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -895,18 +912,18 @@
             const comment = document.getElementById('guestComment').value.trim();
             
             if (adults === 0 && children === 0) {
-                alert('Խնդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
+                alert('նդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
                 return;
             }
             
             if (!guestName) {
-                alert('Խնդրում ենք լրացնել ձեր անունը');
+                alert('նդրում ենք լրացնել ձեր անունը');
                 return;
             }
             
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
-            message += `👨‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
+            message += `👨‍👩👧‍👦 *Մեծահասակներ:* ${adults}\n`;
             message += `👶 *Երեխաներ:* ${children}\n`;
             message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
             
@@ -920,10 +937,9 @@
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappURL, '_blank');
-            alert('✅ Շնորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
+            alert('✅ նորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
         });
 
-        // Scroll Animation Observer
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
