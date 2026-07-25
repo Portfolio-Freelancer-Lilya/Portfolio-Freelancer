@@ -42,6 +42,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
 
         body::before {
@@ -608,7 +609,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive Fixes */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero-name {
                 font-size: 3rem;
@@ -619,16 +620,12 @@
             }
 
             .countdown-item {
-                min-width: 80px;
-                padding: 1.2rem 0.8rem;
+                min-width: 90px;
+                padding: 1.5rem 1rem;
             }
             
             .countdown-number {
-                font-size: 1.8rem;
-            }
-
-            .countdown-label {
-                font-size: 0.8rem;
+                font-size: 2.2rem;
             }
 
             .guest-counters {
@@ -648,6 +645,15 @@
                 width: 100%;
                 max-width: 320px;
                 justify-content: center;
+            }
+            
+            /* Հետհաշվարկի համար մոբայլի դեպքում ոչ այնքան մեծ թվեր */
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -693,7 +699,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄԱՑԵԼ Է </h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -731,7 +737,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>ՈՐՏԵՂ</h3>
-                <p>Ռեստորան<br>ք. Աշտարակ, Հասցե<br>(Կայանատեղի կա)</p>
+                <p>Հոտելան Ակադեմիա<br>ք. Երևան, Հասցե<br>(Կայանատեղի կա)</p>
             </div>
             
             <div class="detail-card">
@@ -756,7 +762,7 @@
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="րինակ՝ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -785,7 +791,7 @@
                 </div>
 
                 <button type="submit" class="submit-btn">
-                    <i class="fab fa-whatsapp"></i> ՈՒՂՂԱՐԿԵԼ WHATSAPP-ՈՎ
+                    <i class="fab fa-whatsapp"></i> ՈՒՂԱՐԿԵԼ WHATSAPP-ՈՎ
                 </button>
             </form>
         </div>
@@ -800,7 +806,7 @@
 
     <script>
         // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
+        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
         // ==========================================
         const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
