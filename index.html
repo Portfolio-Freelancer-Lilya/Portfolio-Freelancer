@@ -253,6 +253,7 @@
         }
 
         .section-title {
+            text-align: center;
             font-family: 'Russo One', sans-serif;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin-bottom: 3rem;
@@ -421,9 +422,7 @@
             background: linear-gradient(135deg, var(--grass-light), var(--grass-bright));
         }
 
-        /* ========================================== */
-        /* RSVP Section - ԻՐԱՐ ԿՈՂՔԻ (Side by Side)  */
-        /* ========================================== */
+        /* RSVP Section - ՎԵՐԱԴԱՐՁՎԱԾ ՈՒՂՂԱՀԱՅԱՑ ՏԵՍՔԻՆ */
         .rsvp-section {
             padding: 5rem 2rem;
             background: linear-gradient(135deg, rgba(26, 95, 26, 0.95), rgba(15, 40, 20, 0.98));
@@ -434,35 +433,21 @@
 
         .rsvp-container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 700px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: row; /* Իրար կողքի */
-            gap: 3rem;
-            align-items: flex-start;
+            text-align: center;
         }
 
-        .rsvp-text-block {
-            flex: 1;
-            text-align: left;
-            padding-top: 1rem;
-        }
-
-        .rsvp-text-block .section-title {
-            text-align: left;
-            margin-bottom: 1.5rem;
-            white-space: normal;
-        }
-
-        .rsvp-text-block .rsvp-text {
-            text-align: left;
-            font-size: 1.15rem;
+        .rsvp-text {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.9;
             line-height: 1.8;
-            margin-bottom: 0;
+            margin-bottom: 3rem;
         }
 
+        /* Form Styles */
         .rsvp-form {
-            flex: 1.2; /* Ֆորմային մի փոքր ավելի շատ տեղ */
             background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
             padding: 3rem 2.5rem;
             border-radius: 24px;
@@ -681,31 +666,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .rsvp-container {
-                flex-direction: column; /* Հեռախոսով և պլանշետով իրար տակ */
-                align-items: center;
-                gap: 2rem;
-            }
-
-            .rsvp-text-block {
-                text-align: center;
-            }
-
-            .rsvp-text-block .section-title {
-                text-align: center;
-            }
-
-            .rsvp-text-block .rsvp-text {
-                text-align: center;
-            }
-
-            .rsvp-form {
-                width: 100%;
-                padding: 2rem 1.5rem;
-            }
-        }
-
         @media (max-width: 768px) {
             .hero {
                 padding: 2rem 1rem;
@@ -727,6 +687,10 @@
 
             .guest-counters {
                 grid-template-columns: 1fr;
+            }
+
+            .rsvp-form {
+                padding: 2rem 1.5rem;
             }
 
             .hero-buttons {
@@ -796,7 +760,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title" style="text-align: center;">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -819,7 +783,7 @@
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title" style="text-align: center;">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
@@ -853,19 +817,16 @@
         </div>
     </section>
 
-    <!-- RSVP Section with Form (Side by Side) -->
+    <!-- RSVP Section with Form (ՈՒՂՂԱՀԱՅԱՑ) -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <!-- Ձախ կողմ՝ Տեքստ -->
-            <div class="rsvp-text-block">
-                <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
-                <p class="rsvp-text">
-                    Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
-                    Խնդրում ենք լրացնել և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
-                </p>
-            </div>
+            <!-- Վերնագիրը մեկ տողով -->
+            <h2 class="section-title" style="white-space: nowrap; font-size: clamp(1.5rem, 4vw, 2.2rem);">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
+            <p class="rsvp-text">
+                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
+                Խնդրում ենք լրացնել և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
+            </p>
             
-            <!-- Աջ կողմ՝ Ֆորմա -->
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
