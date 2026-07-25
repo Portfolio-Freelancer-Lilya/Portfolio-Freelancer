@@ -276,7 +276,7 @@
         }
 
         .countdown-item::before {
-            content: "⚽";
+            content: "";
             position: absolute;
             top: 5px;
             right: 10px;
@@ -699,11 +699,6 @@
                 font-size: 0.85rem;
                 padding: 0.8rem 1.5rem;
             }
-            
-            /* երնագրերը մոբայլում ավելի փոքր */
-            .section-title {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
@@ -712,12 +707,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="football-decoration top-right">⚽</div>
+        <div class="football-decoration top-right"></div>
         <div class="football-decoration bottom-left">⚽</div>
         
         <div class="hero-badge">
             <i class="fas fa-trophy"></i>
-            ԾՆԴՅԱՆ ՈՆԱԿԱԱՐՈՒԹՈՒՆ
+            ՆՆԴՅԱՆ ՏՈՆԱԿԱԱՐՈՒԹՈՒՆ
             <i class="fas fa-trophy"></i>
         </div>
         
@@ -735,10 +730,10 @@
             
             <div class="hero-buttons">
                 <a href="#details" class="btn btn-primary">
-                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՍՆԵՐ
+                    <i class="fas fa-info-circle"></i> ՄԱՆՐԱՄԱՆԵՐ
                 </a>
                 <a href="#rsvp" class="btn btn-whatsapp">
-                    <i class="fas fa-clipboard-list"></i> ՀԱՍՏԱՏԵԼ
+                    <i class="fas fa-clipboard-list"></i> ՀԱՏԱՏԵԼ
                 </a>
             </div>
         </div>
@@ -750,7 +745,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title"> ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -773,13 +768,13 @@
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՌԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ՄԻՋՈՑԱՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="far fa-calendar-alt"></i>
                 </div>
-                <h3>ՕՐԱՑՈՒՅՑ</h3>
+                <h3>ՐԱՑՈՒՅՑ</h3>
                 <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ժամը 18:00-ին</p>
             </div>
             
@@ -795,13 +790,13 @@
                 <div class="detail-icon">
                     <i class="fas fa-directions"></i>
                 </div>
-                <h3>ԻՆՉՊԵ՞Ս ՀԱՍՆԵԼ</h3>
+                <h3>ԻՆՉՊ՞Ս ՀԱՍՆԵԼ</h3>
                 <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
                     Երևանից 25 կմ հարավ<br>
                     Արտաշատ քաղաք
                 </p>
                 <a href="https://maps.app.goo.gl/A7XSEtNrUai4ECUh9?g_st=iw" target="_blank" class="maps-btn">
-                    <i class="fas fa-location-arrow"></i> ԻՆՉՊԵ ՀԱՍՆԵ
+                    <i class="fas fa-location-arrow"></i> ԻՆՉՊԵՍ ՀԱՍՆԵԼ
                 </a>
             </div>
         </div>
@@ -810,17 +805,16 @@
     <!-- RSVP Section with Form -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <!-- Վերնագիրը մեկ տողով -->
-            <h2 class="section-title" style="font-size: 2rem; white-space: nowrap;">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
+            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՆԸ ⚽</h2>
             <p class="rsvp-text">
-                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
-                նդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
+                Սիրով սպասում ենք եզ մեր ծննդյան տոնակատարությանը։<br>
+                Խնդրում ենք րացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -872,7 +866,7 @@
 
             if (distance < 0) {
                 document.getElementById("countdown").innerHTML = 
-                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍՍՎԵԼ Է! 🎉⚽</h3>";
+                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԵՆ ՍԿՍՎԵԼ Է! 🎉⚽</h3>";
                 return;
             }
 
@@ -939,23 +933,23 @@
                 return;
             }
             
-            let message = ` *ԱՆՐԻ 10-ԱՄԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
+            let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
-            message += `👨‍👩‍👧‍ *Մեծահասակներ:* ${adults}\n`;
-            message += ` *Երեխաներ:* ${children}\n`;
+            message += `👨‍👩👧‍👦 *Մեծահասակներ:* ${adults}\n`;
+            message += `👶 *րեխաներ:* ${children}\n`;
             message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
             
             if (comment) {
-                message += ` *Մեկնաբանություն:* ${comment}\n`;
+                message += `💬 *Մեկնաբանություն:* ${comment}\n`;
             }
             
-            message += `\n📅 Հուլիսի 29, 2026 | 18:00`;
+            message += `\n Հուլիսի 29, 2026 | 18:00`;
             
             const phoneNumber = '37477691100';
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappURL, '_blank');
-            alert('✅ Շնորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
+            alert('✅ նորհակալություն! WhatsApp-ը կբացվի ձեր հաստատմամբ։');
         });
 
         // Scroll Animation Observer
