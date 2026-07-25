@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Լիլյա Համբարձումյան - Freelance Web Developer & Shopify Expert">
-    <title>իլյա Համբարձումյան | Freelance Developer</title>
+    <meta name="description" content="Lilya Hambardzumyan - Freelance Web Developer & Shopify Expert">
+    <title>Lilya Hambardzumyan | Freelance Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --accent-color: #7C3AED;
+            --accent-hover: #6D28D9;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --card-bg: #18181b;
+            --border-color: rgba(124, 58, 237, 0.15);
+            --upwork: #14A800;
+            --linkedin: #0077b5;
+            --email: #7C3AED;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #111111;
-            --secondary-color: #7C3AED;
-            --dark-color: #1a1a1a;
-            --light-color: #F8F9FA;
-            --text-color: #333333;
-            --white: #ffffff;
-            --upwork-color: #14A800;
-            --linkedin-color: #0077b5;
-            --email-color: #7C3AED;
         }
 
         html {
@@ -30,10 +35,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
+            color: var(--text-secondary);
+            background-color: var(--primary-bg);
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -41,11 +47,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             transition: all 0.3s ease;
         }
 
@@ -59,15 +65,15 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--text-primary);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         .nav-links {
@@ -78,26 +84,26 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 600;
+            color: var(--text-secondary);
+            font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.3s;
             position: relative;
         }
 
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--secondary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
+            background: var(--accent-color);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover::after {
@@ -108,46 +114,23 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--primary-color);
+            color: var(--text-primary);
+            background: none;
+            border: none;
         }
 
-        /* Hero Section - Առանց նկարի */
+        /* Hero Section */
         .hero {
-            margin-top: 70px;
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #2e1065 50%, #7C3AED 100%);
-            color: var(--white);
-            min-height: 80vh;
+            margin-top: 0;
+            padding: 10rem 2rem 8rem;
+            background: radial-gradient(circle at 50% 0%, #2e1065 0%, var(--primary-bg) 60%);
+            color: var(--text-primary);
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 800px;
-            height: 800px;
-            background: rgba(124, 58, 237, 0.2);
-            border-radius: 50%;
-            filter: blur(100px);
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: rgba(168, 85, 247, 0.15);
-            border-radius: 50%;
-            filter: blur(80px);
         }
 
         .hero-content {
@@ -156,108 +139,131 @@
             max-width: 800px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            color: #c4b5fd;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            letter-spacing: 0.5px;
             animation: fadeInUp 0.8s ease;
         }
 
-        .hero-content .highlight {
-            color: #C4B5FD;
-            display: block;
-            margin-top: 0.5rem;
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, #a78bfa 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 3rem;
-            opacity: 0.95;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
         }
 
         .btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2.2rem;
             border: none;
-            border-radius: 50px;
-            font-size: 1.05rem;
+            border-radius: 8px;
+            font-size: 1rem;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.6rem;
             transition: all 0.3s ease;
             font-weight: 600;
         }
 
         .btn-primary {
-            background: var(--secondary-color);
-            color: var(--white);
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+            background: var(--accent-color);
+            color: var(--text-primary);
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5);
         }
 
         .btn-primary:hover {
-            background: #6D28D9;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.6);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255,255,255,0.4);
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            border-color: var(--white);
-            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
         }
 
         /* Sections General */
         section {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--text-primary);
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .section-subtitle {
-            text-align: center;
-            color: #64748B;
-            margin-bottom: 4rem;
+            color: var(--text-secondary);
             font-size: 1.1rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
         /* About Section */
         .about {
-            background: var(--white);
+            background: var(--secondary-bg);
+            border-top: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
         }
 
         .about-content {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
@@ -265,8 +271,8 @@
         .about-text p {
             margin-bottom: 1.5rem;
             font-size: 1.15rem;
-            line-height: 1.9;
-            color: #475569;
+            line-height: 1.8;
+            color: var(--text-secondary);
         }
 
         .skills {
@@ -274,46 +280,44 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(168, 85, 247, 0.1));
-            color: var(--secondary-color);
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            background: rgba(124, 58, 237, 0.1);
+            color: #c4b5fd;
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
             border: 1px solid rgba(124, 58, 237, 0.2);
             transition: all 0.3s;
         }
 
         .skill-tag:hover {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(168, 85, 247, 0.2));
+            background: rgba(124, 58, 237, 0.2);
+            border-color: rgba(124, 58, 237, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
         }
 
         /* Profiles Section */
         .profiles {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ede9fe 100%);
+            background: var(--primary-bg);
         }
 
         .profiles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            gap: 2rem;
         }
 
         .profile-card {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 3rem 2rem;
-            border-radius: 20px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.4s ease;
-            border-top: 5px solid transparent;
             position: relative;
             overflow: hidden;
         }
@@ -324,67 +328,72 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            transition: all 0.3s;
+            height: 3px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .profile-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
         }
 
-        .profile-card.upwork:hover::before {
-            background: var(--upwork-color);
-        }
-
-        .profile-card.linkedin:hover::before {
-            background: var(--linkedin-color);
-        }
-
-        .profile-card.email:hover::before {
-            background: var(--email-color);
+        .profile-card:hover::before {
+            transform: scaleX(1);
         }
 
         .profile-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2.2rem;
-            color: var(--white);
-            transition: all 0.3s;
+            font-size: 1.8rem;
+            color: var(--text-primary);
         }
 
-        .profile-card.upwork .profile-icon {
-            background: linear-gradient(135deg, var(--upwork-color), #059669);
-        }
-
-        .profile-card.linkedin .profile-icon {
-            background: linear-gradient(135deg, var(--linkedin-color), #0284c7);
-        }
-
-        .profile-card.email .profile-icon {
-            background: linear-gradient(135deg, var(--email-color), #a855f7);
-        }
+        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.15); color: var(--upwork); }
+        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.15); color: var(--linkedin); }
+        .profile-card.email .profile-icon { background: rgba(124, 58, 237, 0.15); color: var(--email); }
 
         .profile-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--text-primary);
+            font-weight: 700;
         }
 
         .profile-card p {
-            color: #64748B;
+            color: var(--text-secondary);
             margin-bottom: 2rem;
             line-height: 1.7;
+            font-size: 0.95rem;
         }
+
+        .btn-card {
+            width: 100%;
+            justify-content: center;
+            padding: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-upwork { background: var(--upwork); color: white; }
+        .btn-upwork:hover { background: #0f8a00; }
+        
+        .btn-linkedin { background: var(--linkedin); color: white; }
+        .btn-linkedin:hover { background: #006097; }
+        
+        .btn-email { background: var(--accent-color); color: white; }
+        .btn-email:hover { background: var(--accent-hover); }
 
         /* Contact Section */
         .contact {
-            background: var(--white);
+            background: var(--secondary-bg);
+            border-top: 1px solid rgba(255,255,255,0.03);
         }
 
         .contact-content {
@@ -396,99 +405,89 @@
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 3rem 0;
         }
 
         .contact-item {
-            padding: 2.5rem 1.5rem;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(168, 85, 247, 0.05));
-            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.3s;
-            border: 1px solid rgba(124, 58, 237, 0.1);
         }
 
         .contact-item:hover {
-            background: linear-gradient(135deg, var(--primary-color), #2e1065);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(124, 58, 237, 0.2);
-        }
-
-        .contact-item:hover i, .contact-item:hover h3, .contact-item:hover p {
-            color: var(--white);
+            border-color: rgba(124, 58, 237, 0.3);
+            transform: translateY(-4px);
         }
 
         .contact-item i {
-            font-size: 2.8rem;
-            color: var(--secondary-color);
+            font-size: 2rem;
+            color: var(--accent-color);
             margin-bottom: 1rem;
-            transition: color 0.3s;
         }
 
         .contact-item h3 {
             margin-bottom: 0.5rem;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: color 0.3s;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .contact-item p {
-            color: #64748B;
+            color: var(--text-secondary);
             font-size: 0.95rem;
-            transition: color 0.3s;
             word-break: break-all;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--primary-color), #2e1065);
-            color: var(--white);
+            background: var(--primary-bg);
+            color: var(--text-secondary);
             text-align: center;
             padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .social-links {
             margin-bottom: 1.5rem;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
 
         .social-links a {
-            color: var(--white);
-            font-size: 1.6rem;
+            color: var(--text-secondary);
+            font-size: 1.4rem;
             transition: all 0.3s;
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .social-links a:hover {
-            background: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-5px) rotate(360deg);
+            color: var(--text-primary);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         /* Responsive */
@@ -499,11 +498,11 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--white);
+                background: var(--secondary-bg);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                border-bottom: 1px solid rgba(255,255,255,0.05);
             }
 
             .nav-links.active {
@@ -515,15 +514,11 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero-content p {
                 font-size: 1.1rem;
-            }
-
-            .profiles-grid {
-                grid-template-columns: 1fr;
             }
 
             .hero-buttons {
@@ -533,8 +528,12 @@
 
             .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
                 justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -544,30 +543,31 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Լիլյա <span>Համբարձումյան</span></a>
+            <a href="#" class="logo">Lilya <span>Hambardzumyan</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">լխավոր</a></li>
-                <li><a href="#about">Իմ Մասին</a></li>
-                <li><a href="#profiles">Պրոֆիլներ</a></li>
-                <li><a href="#contact">Կապ</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section - ԱՌԱՆՑ ՆԿԱՐԻ -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Ողջույն, ես Լիլյա <span class="highlight">Համբարումյանն</span> եմ</h1>
-            <p>Professional Freelance Web Developer & Shopify Expert. Ստեղծում եմ ժամանակակից, արագ և հարմարավետ վեբ կայքեր եր բիզնեսի համար։</p>
+            <div class="hero-badge">Available for Freelance Projects</div>
+            <h1>Building Modern, <br><span class="highlight">High-Performance</span> Web Experiences</h1>
+            <p>Freelance Web Developer & Shopify Expert specializing in creating fast, responsive, and conversion-focused websites that drive real business results.</p>
             <div class="hero-buttons">
                 <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i> Upwork Պրոֆիլ
+                    <i class="fas fa-briefcase"></i> View Upwork Profile
                 </a>
                 <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> Կապվել նձ հետ
+                    <i class="fas fa-envelope"></i> Get in Touch
                 </a>
             </div>
         </div>
@@ -576,12 +576,14 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Իմ Մասին</h2>
-            <p class="section-subtitle">Նվիրված պրոֆեսիոնալ, ով օգնում է բիզնեսներին աճել թվային աշխարհում</p>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">A dedicated professional helping businesses thrive in the digital world.</p>
+            </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Ես փորձառու freelance վեբ մշակող եմ՝ մասնագիտացած Shopify-ի, HTML/CSS/JavaScript-ի և ժամանակակից վեբ տեխնոլոգիաների մեջ։ Իմ նպատակն է ստեղծել ոչ միայն գեղեցիկ, այլև ֆունկցիոնալ և արագ աշխատող կայքեր, որոնք բերում են իրական արդյունք։</p>
-                    <p>Ես մանրակրկիտ ուշադրություն եմ դարձնում մանրուքներին, responsive դիզայնին և օգտագործողի հարմարավետությանը (UX/UI)։</p>
+                    <p>I am an experienced freelance web developer specializing in Shopify, HTML/CSS/JavaScript, and modern web technologies. My goal is to build not just visually appealing, but highly functional and performant websites that deliver tangible value.</p>
+                    <p>I pay meticulous attention to detail, responsive design, and user experience (UX/UI), ensuring every project I deliver is polished, accessible, and optimized for success.</p>
                     <div class="skills">
                         <span class="skill-tag">HTML5 & CSS3</span>
                         <span class="skill-tag">JavaScript</span>
@@ -599,8 +601,10 @@
     <!-- Profiles Section -->
     <section class="profiles" id="profiles">
         <div class="container">
-            <h2 class="section-title">Իմ Պրոֆեսիոնալ Պրոֆիլները</h2>
-            <p class="section-subtitle">Կարող եք ծանոթանալ իմ աշխատանքին և որձառությանը հետևյալ հարթակներում</p>
+            <div class="section-header">
+                <h2 class="section-title">Professional Profiles</h2>
+                <p class="section-subtitle">Connect with me and explore my work across these platforms.</p>
+            </div>
             
             <div class="profiles-grid">
                 <!-- Upwork Card -->
@@ -609,9 +613,9 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Upwork</h3>
-                    <p>Դիտեք մ ավարտված նախագծերը, հաճախորդների գրախոսականները և իմ մասնագիտական վարկանիշը Upwork-ում։</p>
-                    <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="btn btn-primary" style="background: var(--upwork-color);">
-                        Այցելել Upwork <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+                    <p>Explore my completed projects, client reviews, and professional track record on Upwork.</p>
+                    <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="btn btn-card btn-upwork">
+                        Visit Upwork <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
@@ -621,9 +625,9 @@
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <h3>LinkedIn</h3>
-                    <p>Կապ հաստատեք ինձ հետ LinkedIn-ում՝ ծանոթանալու իմ մասնագիտական ուղուն, հմտություններին և ցանցին։</p>
-                    <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" class="btn btn-primary" style="background: var(--linkedin-color);">
-                        Այցելել LinkedIn <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+                    <p>Connect with me on LinkedIn to learn more about my professional journey, skills, and network.</p>
+                    <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" class="btn btn-card btn-linkedin">
+                        Visit LinkedIn <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
@@ -632,10 +636,10 @@
                     <div class="profile-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Էլ. Հասցե</h3>
-                    <p>ւղարկեք ինձ ուղիղ նամակ ձեր նախագծի մանրամասները քննարկելու և համագործակցություն սկսելու համար։</p>
-                    <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-primary" style="background: var(--email-color);">
-                        Գրել Ինձ <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                    <h3>Email</h3>
+                    <p>Send me a direct message to discuss your project details and start a collaboration.</p>
+                    <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-card btn-email">
+                        Send an Email <i class="fas fa-paper-plane"></i>
                     </a>
                 </div>
             </div>
@@ -645,8 +649,10 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">ապվել Ինձ Հետ</h2>
-            <p class="section-subtitle">Պատրաստ եմ քննարկելու ձեր նախագիծը։ Գրեք նձ ցանկացած հարցի կամ համագործակցության առաջարկի համար։</p>
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Ready to discuss your project? Reach out to me for any questions or collaboration opportunities.</p>
+            </div>
             
             <div class="contact-content">
                 <div class="contact-info">
@@ -657,18 +663,18 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <h3>Հեռախոս</h3>
-                        <p>+374 XX XXXXXX</p>
+                        <h3>Phone</h3>
+                        <p>+374 XX XXXXXX</p> <!-- Replace with your actual number -->
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h3>Գտնվելու Վայրը</h3>
-                        <p>Երևան, Հայաստան</p>
+                        <h3>Location</h3>
+                        <p>Yerevan, Armenia</p>
                     </div>
                 </div>
 
-                <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">
-                    <i class="fas fa-paper-plane"></i> Ուղարկել Հաղորդագրություն
+                <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-primary" style="padding: 1.1rem 3rem; font-size: 1.05rem;">
+                    <i class="fas fa-paper-plane"></i> Send a Message
                 </a>
             </div>
         </div>
@@ -681,7 +687,7 @@
             <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:lilyahambardzumyan333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2024 Լիլյա Համբարձումյան։ Բոլոր իրավունքները պաշտպանված են։</p>
+        <p>&copy; 2024 Lilya Hambardzumyan. All rights reserved.</p>
     </footer>
 
     <script>
@@ -714,9 +720,11 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
             } else {
-                nav.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
+                nav.style.background = 'rgba(10, 10, 10, 0.85)';
+                nav.style.boxShadow = 'none';
             }
         });
 
@@ -735,11 +743,11 @@
             });
         }, observerOptions);
 
-        // Apply animation to cards
+        // Apply animation to elements
         document.querySelectorAll('.profile-card, .contact-item, .skill-tag').forEach(el => {
             el.style.opacity = "0";
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "all 0.6s ease-out";
+            el.style.transform = "translateY(25px)";
+            el.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
             observer.observe(el);
         });
     </script>
