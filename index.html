@@ -712,14 +712,14 @@
 
     <!-- Details Section -->
     <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՌԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
                     <i class="far fa-calendar-alt"></i>
                 </div>
-                <h3>ԵՐ</h3>
-                <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ժամը 18:00-ին<br> Խաղեր և մրցույթներ</p>
+                <h3>ՕՐԱՑՈՒՅՑ</h3>
+                <p>Չորեքշաբթի, Հուլիսի 29, 2026<br>Սկիզբը ժամը 18:00-ին</p>
             </div>
             
             <div class="detail-card">
@@ -743,10 +743,10 @@
     <!-- RSVP Section with Form -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՈՒԹՅՈՆԸ ⚽</h2>
+            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈԻՆԸ ⚽</h2>
             <p class="rsvp-text">
                 Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
-                Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել եր մասնակցության մասին։
+                Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
@@ -776,7 +776,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն (կամավոր)</label>
+                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն </label>
                     <textarea class="form-control form-textarea" id="guestComment" placeholder="Ալերգիա, հատուկ ցանկություններ կամ այլ նշումներ..."></textarea>
                 </div>
 
@@ -798,7 +798,7 @@
         // ==========================================
         // ՀԵՏՀԱՇՎԱՐԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
         // ==========================================
-        const eventDate = new Date("2026-07-29T15:00:00").getTime();
+        const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -806,7 +806,7 @@
 
             if (distance < 0) {
                 document.getElementById("countdown").innerHTML = 
-                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ԿՍՎԵԼ Է! 🎉⚽</h3>";
+                    "<h3 style='color: #4ade4a; font-size: 2rem; font-family: Russo One;'>ՏՈՆԸ ԱՐԴԵՆ ՍԿՍՎԵԼ Է! 🎉⚽</h3>";
                 return;
             }
 
@@ -882,7 +882,7 @@
                 return;
             }
             
-            // ևավորել WhatsApp հաղորդագրություն
+            // ՈԻղղարկել WhatsApp հաղորդագրություն
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
             message += `‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
