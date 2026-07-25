@@ -42,6 +42,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
         }
 
         body::before {
@@ -645,6 +646,15 @@
                 max-width: 320px;
                 justify-content: center;
             }
+            
+            /* Հետհաշվարկի համար մոբայլի դեպքում ոչ այնքան մեծ թվեր */
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -689,7 +699,7 @@
 
     <!-- Countdown Section -->
     <section class="countdown-section">
-        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄԱՑԵԼ Է </h2>
+        <h2 class="section-title">⚽ ՄԻՆՉԵՎ ՏՈՆԸ ՄՆԱՑԵԼ Է ⚽</h2>
         <div class="countdown-container" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -727,7 +737,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>ՈՐՏԵՂ</h3>
-                <p>Ռեստորան<br>ք. Աշտարակ, Հասցե<br>(Կայանատեղի կա)</p>
+                <p>Հոտելան Ակադեմիա<br>ք. Երևան, Հասցե<br>(Կայանատեղի կա)</p>
             </div>
             
             <div class="detail-card">
@@ -735,7 +745,7 @@
                     <i class="fas fa-tshirt"></i>
                 </div>
                 <h3>ԶԳԵՍՏԻ ԿՈԴ</h3>
-                
+                <p>Սպորտային / Ֆուտբոլային<br>Բերեք ձեր ֆուտբոլային մարզաշապիկը!<br>⚽👟</p>
             </div>
         </div>
     </section>
@@ -743,16 +753,16 @@
     <!-- RSVP Section with Form -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈԻՆԸ ⚽</h2>
+            <h2 class="section-title">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
             <p class="rsvp-text">
-                Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
+                Սիրով սպասում ենք Ձեզ մեր ֆուտբոլային տոնակատարությանը։<br>
                 Խնդրում ենք լրացնել ստորև և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
             </p>
             
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="րինակ՝ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -776,7 +786,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն </label>
+                    <label><i class="fas fa-comment-dots"></i> Մեկնաբանություն (կամավոր)</label>
                     <textarea class="form-control form-textarea" id="guestComment" placeholder="Ալերգիա, հատուկ ցանկություններ կամ այլ նշումներ..."></textarea>
                 </div>
 
@@ -790,13 +800,13 @@
     <!-- Footer -->
     <footer>
         <div class="footer-football"></div>
-        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ծննդյան տոնին!</p>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Սպասում ենք Ձեզ մեր ֆուտբոլային տոնին!</p>
         <p style="font-size: 0.9rem; opacity: 0.7;">© 2026 Անրի Սահակյանի 10-ամյակ | Բոլոր իրավունքները պաշտպանված են</p>
     </footer>
 
     <script>
         // ==========================================
-        // ՀԵՏՀԱՇՎԱՐԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
+        // ՀԵՏՀԱՇՎԱՐԿԻ ՏԱՐԵԹԻՎԸ ՍԱՀՄԱՆԵԼ ԱՅՍՏԵՂ
         // ==========================================
         const eventDate = new Date("2026-07-29T18:00:00").getTime();
 
@@ -872,7 +882,7 @@
             
             // Ստուգել, որ գոնե մեկ հյուր կա
             if (adults === 0 && children === 0) {
-                alert(Խնդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
+                alert('Խնդրում ենք նշել գոնե մեկ հյուր (մեծահասակ կամ երեխա)');
                 return;
             }
             
@@ -882,7 +892,7 @@
                 return;
             }
             
-            // ՈԻղղարկել WhatsApp հաղորդագրություն
+            // ՈՒՂՂԱՐԿԵԼ WhatsApp հաղորդագրություն
             let message = ` *ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
             message += `‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
