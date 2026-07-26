@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-bg: #D9BCDB; /* Բաց վարդագույն ֆոն */
-            --secondary-bg: #C8A2C8; /* Կիսամուգ վարդագույն բաժինների համար */
-            --accent-color: #790A81; /* Մուգ մանուշակագույն շեշտադրումների համար */
-            --accent-hover: #5C0864; /* Ավելի մուգ մանուշակագույն hover-ի համար */
-            --text-primary: #790A81; /* Գլխագրերի համար */
-            --text-secondary: #790A81; /* Հիմնական տեքստի համար */
-            --card-bg: #ffffff;
-            --border-color: rgba(121, 10, 129, 0.2); /* Մանուշակագույն սահմանագիծ */
+            --primary-bg: #000000;
+            --secondary-bg: #0a0a0a;
+            --accent-color: #7C3AED;
+            --accent-hover: #6D28D9;
+            --text-primary: #ffffff;
+            --text-secondary: #e5e7eb;
+            --card-bg: #111111;
+            --border-color: rgba(124, 58, 237, 0.2);
             --upwork: #14A800;
             --linkedin: #0077b5;
-            --email: #790A81;
+            --email: #7C3AED;
         }
 
         * {
@@ -47,9 +47,9 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(217, 188, 219, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
             padding: 1.2rem 0;
             transition: all 0.3s ease;
@@ -67,7 +67,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--accent-color);
+            color: var(--text-primary);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -92,7 +92,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--text-primary);
         }
 
         .nav-links a::after {
@@ -114,7 +114,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--accent-color);
+            color: var(--text-primary);
             background: none;
             border: none;
         }
@@ -123,7 +123,7 @@
         .hero {
             margin-top: 0;
             padding: 10rem 2rem 8rem;
-            background: radial-gradient(circle at 50% 0%, #E6D6E8 0%, var(--primary-bg) 60%);
+            background: radial-gradient(circle at 50% 0%, #1a0533 0%, var(--primary-bg) 60%);
             color: var(--text-primary);
             min-height: 85vh;
             display: flex;
@@ -142,10 +142,10 @@
         .hero-badge {
             display: inline-block;
             padding: 0.5rem 1.2rem;
-            background: rgba(121, 10, 129, 0.15);
-            border: 1px solid rgba(121, 10, 129, 0.3);
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.4);
             border-radius: 50px;
-            color: var(--accent-color);
+            color: #c4b5fd;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -159,12 +159,11 @@
             line-height: 1.1;
             font-weight: 800;
             letter-spacing: -1.5px;
-            color: var(--text-primary);
             animation: fadeInUp 0.8s ease 0.1s backwards;
         }
 
         .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #B880C2 0%, #790A81 100%);
+            background: linear-gradient(135deg, #a78bfa 0%, #7C3AED 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -204,26 +203,110 @@
 
         .btn-primary {
             background: var(--accent-color);
-            color: #ffffff;
-            box-shadow: 0 10px 30px -10px rgba(121, 10, 129, 0.4);
+            color: var(--text-primary);
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5);
         }
 
         .btn-primary:hover {
             background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px -10px rgba(121, 10, 129, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.6);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .btn-outline:hover {
-            background: var(--accent-color);
-            color: #ffffff;
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
             transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--secondary-bg);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #7C3AED, #a78bfa);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.3);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(124, 58, 237, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .feature-stat {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a78bfa 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
         /* Sections General */
@@ -258,9 +341,7 @@
 
         /* About Section */
         .about {
-            background: var(--secondary-bg);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            background: var(--primary-bg);
         }
 
         .about-content {
@@ -285,26 +366,25 @@
         }
 
         .skill-tag {
-            background: rgba(121, 10, 129, 0.15);
-            color: var(--accent-color);
+            background: rgba(124, 58, 237, 0.15);
+            color: #c4b5fd;
             padding: 0.6rem 1.4rem;
             border-radius: 6px;
             font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(121, 10, 129, 0.3);
+            font-weight: 500;
+            border: 1px solid rgba(124, 58, 237, 0.3);
             transition: all 0.3s;
         }
 
         .skill-tag:hover {
-            background: var(--accent-color);
-            color: #ffffff;
-            border-color: var(--accent-color);
+            background: rgba(124, 58, 237, 0.25);
+            border-color: rgba(124, 58, 237, 0.5);
             transform: translateY(-2px);
         }
 
         /* Profiles Section */
         .profiles {
-            background: var(--primary-bg);
+            background: var(--secondary-bg);
         }
 
         .profiles-grid {
@@ -318,7 +398,7 @@
             padding: 3rem 2rem;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -338,8 +418,8 @@
 
         .profile-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-color);
-            box-shadow: 0 20px 40px -15px rgba(121, 10, 129, 0.2);
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
         }
 
         .profile-card:hover::before {
@@ -355,11 +435,12 @@
             justify-content: center;
             margin: 0 auto 1.5rem;
             font-size: 1.8rem;
+            color: var(--text-primary);
         }
 
-        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.15); color: var(--upwork); }
-        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.15); color: var(--linkedin); }
-        .profile-card.email .profile-icon { background: rgba(121, 10, 129, 0.15); color: var(--email); }
+        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.2); color: var(--upwork); }
+        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.2); color: var(--linkedin); }
+        .profile-card.email .profile-icon { background: rgba(124, 58, 237, 0.2); color: var(--email); }
 
         .profile-card h3 {
             font-size: 1.4rem;
@@ -393,8 +474,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--secondary-bg);
-            border-top: 1px solid var(--border-color);
+            background: var(--primary-bg);
         }
 
         .contact-content {
@@ -414,14 +494,13 @@
             padding: 2rem 1.5rem;
             background: var(--card-bg);
             border-radius: 12px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
         }
 
         .contact-item:hover {
-            border-color: var(--accent-color);
+            border-color: rgba(124, 58, 237, 0.4);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px -10px rgba(121, 10, 129, 0.2);
         }
 
         .contact-item i {
@@ -445,11 +524,11 @@
 
         /* Footer */
         footer {
-            background: var(--primary-bg);
+            background: var(--secondary-bg);
             color: var(--text-secondary);
             text-align: center;
             padding: 3rem 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .social-links {
@@ -460,7 +539,7 @@
         }
 
         .social-links a {
-            color: var(--accent-color);
+            color: var(--text-secondary);
             font-size: 1.4rem;
             transition: all 0.3s;
             width: 48px;
@@ -469,12 +548,12 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(121, 10, 129, 0.1);
-            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .social-links a:hover {
-            color: #ffffff;
+            color: var(--text-primary);
             background: var(--accent-color);
             border-color: var(--accent-color);
             transform: translateY(-3px);
@@ -500,12 +579,11 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: var(--primary-bg);
+                background: var(--secondary-bg);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: 0 10px 20px rgba(121, 10, 129, 0.15);
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             .nav-links.active {
@@ -538,6 +616,10 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -549,6 +631,7 @@
             <a href="#" class="logo">Lilya <span>Hambardzumyan</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#features">Why Me</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#profiles">Profiles</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -572,6 +655,48 @@
                 <a href="#contact" class="btn btn-outline">
                     <i class="fas fa-envelope"></i> Get in Touch
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Me</h2>
+                <p class="section-subtitle">Committed to delivering excellence with every project</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- 24/7 Available -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-stat">24/7</div>
+                    <h3>Always Available</h3>
+                    <p>Available around the clock to discuss your project, answer questions, and provide support whenever you need it.</p>
+                </div>
+
+                <!-- 100% Reliability -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-stat">100%</div>
+                    <h3>Reliability</h3>
+                    <p>Committed to delivering exactly what we agreed upon. No surprises, no compromises on quality.</p>
+                </div>
+
+                <!-- 100% Deadline Compliance -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="feature-stat">100%</div>
+                    <h3>Deadline Compliance</h3>
+                    <p>Your project will be delivered on time, every time. I respect deadlines and your business schedule.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -723,10 +848,10 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(217, 188, 219, 0.98)';
-                nav.style.boxShadow = '0 4px 20px rgba(121, 10, 129, 0.15)';
+                nav.style.background = 'rgba(0, 0, 0, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(124, 58, 237, 0.2)';
             } else {
-                nav.style.background = 'rgba(217, 188, 219, 0.95)';
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
                 nav.style.boxShadow = 'none';
             }
         });
@@ -747,7 +872,7 @@
         }, observerOptions);
 
         // Apply animation to elements
-        document.querySelectorAll('.profile-card, .contact-item, .skill-tag').forEach(el => {
+        document.querySelectorAll('.feature-card, .profile-card, .contact-item, .skill-tag').forEach(el => {
             el.style.opacity = "0";
             el.style.transform = "translateY(25px)";
             el.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
