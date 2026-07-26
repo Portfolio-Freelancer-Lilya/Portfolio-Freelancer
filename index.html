@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lilya Hambardzumyan - Freelance Web Developer & Shopify Expert">
-    <title>Lilya Hambardzumyan | Freelance Web Developer</title>
+    <title>Lilya Hambardzumyan | Portfolio 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-bg: #000000;
-            --secondary-bg: #0a0a0a;
-            --accent-color: #7C3AED;
-            --accent-hover: #6D28D9;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --accent: #7C3AED;
+            --accent-light: #a78bfa;
             --text-primary: #ffffff;
-            --text-secondary: #e5e7eb;
-            --card-bg: #111111;
-            --border-color: rgba(124, 58, 237, 0.2);
-            --upwork: #14A800;
-            --linkedin: #0077b5;
-            --email: #7C3AED;
+            --text-secondary: #94a3b8;
+            --border: rgba(124, 58, 237, 0.2);
         }
 
         * {
@@ -35,11 +31,15 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
             color: var(--text-secondary);
-            background-color: var(--primary-bg);
+            line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         /* Navigation */
@@ -47,18 +47,16 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 2rem;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1.2rem 0;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -66,151 +64,114 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: var(--accent-color);
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2.5rem;
+            list-style: none;
         }
 
         .nav-links a {
-            text-decoration: none;
             color: var(--text-secondary);
+            text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
             transition: color 0.3s;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-primary);
-            background: none;
-            border: none;
-        }
-
         /* Hero Section */
         .hero {
-            margin-top: 0;
-            padding: 10rem 2rem 8rem;
-            background: radial-gradient(circle at 50% 0%, #1a0533 0%, var(--primary-bg) 60%);
-            color: var(--text-primary);
-            min-height: 85vh;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(circle at 50% 0%, #1a0533 0%, var(--bg-primary) 60%);
             position: relative;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .hero-badge {
             display: inline-block;
             padding: 0.5rem 1.2rem;
-            background: rgba(124, 58, 237, 0.2);
-            border: 1px solid rgba(124, 58, 237, 0.4);
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: 50px;
-            color: #c4b5fd;
+            color: var(--accent-light);
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--text-primary);
             line-height: 1.1;
-            font-weight: 800;
-            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
             animation: fadeInUp 0.8s ease 0.1s backwards;
         }
 
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #a78bfa 0%, #7C3AED 100%);
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
             animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.2rem;
-            justify-content: center;
+            gap: 1.5rem;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease 0.3s backwards;
         }
 
         .btn {
-            padding: 1rem 2.2rem;
-            border: none;
+            padding: 1rem 2.5rem;
             border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
             text-decoration: none;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
         }
 
         .btn-primary {
-            background: var(--accent-color);
+            background: var(--accent);
             color: var(--text-primary);
             box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5);
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
+            background: #6d28d9;
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.6);
         }
 
         .btn-outline {
@@ -222,340 +183,287 @@
         .btn-outline:hover {
             background: rgba(255,255,255,0.1);
             border-color: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
         }
 
-        /* Features Section */
-        .features {
-            background: var(--secondary-bg);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
+        .scroll-indicator {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #7C3AED, #a78bfa);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-color);
-            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.3);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(124, 58, 237, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: var(--accent-color);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        .feature-card p {
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
             color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
         }
 
-        .feature-stat {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #a78bfa 0%, #7C3AED 100%);
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
+            display: block;
         }
 
-        /* Sections General */
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
         section {
-            padding: 7rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
-            text-align: center;
             margin-bottom: 4rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             color: var(--text-primary);
-            font-weight: 800;
-            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         /* About Section */
         .about {
-            background: var(--primary-bg);
+            background: var(--bg-primary);
         }
 
         .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            max-width: 900px;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
+        .about-text {
             font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
 
-        .skills {
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
+            gap: 1rem;
             margin-top: 3rem;
         }
 
         .skill-tag {
             background: rgba(124, 58, 237, 0.15);
-            color: #c4b5fd;
-            padding: 0.6rem 1.4rem;
+            color: var(--accent-light);
+            padding: 0.7rem 1.5rem;
             border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(124, 58, 237, 0.3);
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
             transition: all 0.3s;
         }
 
         .skill-tag:hover {
             background: rgba(124, 58, 237, 0.25);
-            border-color: rgba(124, 58, 237, 0.5);
             transform: translateY(-2px);
         }
 
-        /* Profiles Section */
-        .profiles {
-            background: var(--secondary-bg);
+        /* Projects Section */
+        .projects {
+            background: var(--bg-secondary);
         }
 
-        .profiles-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
-        .profile-card {
-            background: var(--card-bg);
-            padding: 3rem 2rem;
+        .project-card {
+            background: var(--bg-primary);
             border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.4s ease;
-            position: relative;
             overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s;
         }
 
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--accent-color);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .profile-card:hover {
+        .project-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(124, 58, 237, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.3);
         }
 
-        .profile-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .profile-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #1a0533 0%, var(--accent) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.8rem;
+            font-size: 4rem;
             color: var(--text-primary);
         }
 
-        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.2); color: var(--upwork); }
-        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.2); color: var(--linkedin); }
-        .profile-card.email .profile-icon { background: rgba(124, 58, 237, 0.2); color: var(--email); }
+        .project-info {
+            padding: 2rem;
+        }
 
-        .profile-card h3 {
-            font-size: 1.4rem;
+        .project-info h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-weight: 700;
         }
 
-        .profile-card p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+        .project-info p {
+            margin-bottom: 1.5rem;
             line-height: 1.7;
-            font-size: 0.95rem;
         }
 
-        .btn-card {
-            width: 100%;
-            justify-content: center;
-            padding: 0.9rem;
-            font-size: 0.95rem;
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-upwork { background: var(--upwork); color: white; }
-        .btn-upwork:hover { background: #0f8a00; }
-        
-        .btn-linkedin { background: var(--linkedin); color: white; }
-        .btn-linkedin:hover { background: #006097; }
-        
-        .btn-email { background: var(--accent-color); color: white; }
-        .btn-email:hover { background: var(--accent-hover); }
+        .project-tag {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent-light);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
 
-        /* Contact Section */
+        /* Timeline */
+        .timeline {
+            background: var(--bg-primary);
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-left: 2px solid var(--border);
+            margin-left: 1rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 2.5rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-date {
+            color: var(--accent-light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact */
         .contact {
-            background: var(--primary-bg);
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
+            background: var(--bg-secondary);
             text-align: center;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin: 3rem 0;
         }
 
         .contact-item {
-            padding: 2rem 1.5rem;
-            background: var(--card-bg);
+            padding: 2rem;
+            background: var(--bg-primary);
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--border);
             transition: all 0.3s;
         }
 
         .contact-item:hover {
-            border-color: rgba(124, 58, 237, 0.4);
+            border-color: var(--accent);
             transform: translateY(-4px);
         }
 
         .contact-item i {
             font-size: 2rem;
-            color: var(--accent-color);
+            color: var(--accent);
             margin-bottom: 1rem;
         }
 
         .contact-item h3 {
-            margin-bottom: 0.5rem;
             color: var(--text-primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            word-break: break-all;
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
         footer {
-            background: var(--secondary-bg);
-            color: var(--text-secondary);
-            text-align: center;
+            background: var(--bg-primary);
             padding: 3rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            border-top: 1px solid var(--border);
         }
 
         .social-links {
-            margin-bottom: 1.5rem;
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.4rem;
-            transition: all 0.3s;
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
+            background: var(--accent);
             color: var(--text-primary);
-            background: var(--accent-color);
-            border-color: var(--accent-color);
             transform: translateY(-3px);
         }
 
@@ -563,7 +471,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(25px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -571,53 +479,34 @@
             }
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--secondary-bg);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
             }
 
             .btn {
                 width: 100%;
-                max-width: 320px;
                 justify-content: center;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .features-grid {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -629,16 +518,13 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">Lilya <span>Hambardzumyan</span></a>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#features">Why Me</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 
@@ -646,58 +532,45 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">Available for Freelance Projects</div>
-            <h1>Building Modern, <br><span class="highlight">High-Performance</span> Web Experiences</h1>
-            <p>Freelance Web Developer & Shopify Expert specializing in creating fast, responsive, and conversion-focused websites that drive real business results.</p>
+            <h1>
+                Crafting_unique_<br>
+                <span class="highlight">digital_experiences.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Shopify Specialist & Frontend Developer. I approach every project as if it were my own, 
+                bringing a unique, unrepeatable touch to web development and e-commerce.
+            </p>
             <div class="hero-buttons">
-                <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i> View Upwork Profile
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i> View my work
                 </a>
                 <a href="#contact" class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> Get in Touch
+                    <i class="fas fa-comment"></i> Let's talk
                 </a>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose Me</h2>
-                <p class="section-subtitle">Committed to delivering excellence with every project</p>
-            </div>
-            
-            <div class="features-grid">
-                <!-- 24/7 Available -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="feature-stat">24/7</div>
-                    <h3>Always Available</h3>
-                    <p>Available around the clock to discuss your project, answer questions, and provide support whenever you need it.</p>
-                </div>
-
-                <!-- 100% Reliability -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-stat">100%</div>
-                    <h3>Reliability</h3>
-                    <p>Committed to delivering exactly what we agreed upon. No surprises, no compromises on quality.</p>
-                </div>
-
-                <!-- 100% Deadline Compliance -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div class="feature-stat">100%</div>
-                    <h3>Deadline Compliance</h3>
-                    <p>Your project will be delivered on time, every time. I respect deadlines and your business schedule.</p>
-                </div>
-            </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <div class="stat-label">Dedication</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <div class="stat-label">Availability</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <div class="stat-label">Deadline Compliance</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number"></span>
+            <div class="stat-label">Unique Approach</div>
         </div>
     </section>
 
@@ -705,71 +578,120 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">A dedicated professional helping businesses thrive in the digital world.</p>
+                <h2 class="section-title">01 — About</h2>
+                <p class="section-subtitle">Driven by hard work, fueled by passion.</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am an experienced freelance web developer specializing in Shopify, HTML/CSS/JavaScript, and modern web technologies. My goal is to build not just visually appealing, but highly functional and performant websites that deliver tangible value.</p>
-                    <p>I pay meticulous attention to detail, responsive design, and user experience (UX/UI), ensuring every project I deliver is polished, accessible, and optimized for success.</p>
-                    <div class="skills">
-                        <span class="skill-tag">HTML5 & CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Shopify & Liquid</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">SEO Optimization</span>
+                    <p>I'm Lilya — a Shopify Specialist and developer who loves helping people build successful online businesses. My journey began with a deep curiosity about e-commerce technology and web development.</p>
+                    <p>Today, I am a dedicated Shopify and web specialist, creating intuitive, beautiful, and high-converting user experiences. Whether I'm coding complex features or designing stunning interfaces, I believe in discipline, hard work, and treating every client's project as my own.</p>
+                </div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Shopify Development</span>
+                    <span class="skill-tag">Frontend Engineering</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">E-commerce Strategy</span>
+                    <span class="skill-tag">HTML5 & CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Liquid</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">02 — Selected Work</h2>
+                <p class="section-subtitle">Projects I'm proud of.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Shopify Store — Complete Setup</h3>
+                        <p>End-to-end Shopify store creation with custom theme, product sections, and optimized checkout flow.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Shopify</span>
+                            <span class="project-tag">Liquid</span>
+                            <span class="project-tag">Custom Design</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page — High Converting</h3>
+                        <p>Custom-coded landing page with modern animations, responsive design, and conversion optimization.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">UI/UX</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Full-featured e-commerce platform with custom sections, product quiz, and interactive elements.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Shopify</span>
+                            <span class="project-tag">Custom Sections</span>
+                            <span class="project-tag">Quiz</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Profiles Section -->
-    <section class="profiles" id="profiles">
+    <!-- Journey Section -->
+    <section class="timeline" id="journey">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Professional Profiles</h2>
-                <p class="section-subtitle">Connect with me and explore my work across these platforms.</p>
+                <h2 class="section-title">03 — Journey</h2>
+                <p class="section-subtitle">A path of continuous growth.</p>
             </div>
             
-            <div class="profiles-grid">
-                <!-- Upwork Card -->
-                <div class="profile-card upwork">
-                    <div class="profile-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Upwork</h3>
-                    <p>Explore my completed projects, client reviews, and professional track record on Upwork.</p>
-                    <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="btn btn-card btn-upwork">
-                        Visit Upwork <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 — Present</div>
+                <h3 class="timeline-title">Shopify & Web Specialist</h3>
+                <div class="timeline-company">Independent Practice</div>
+                <p>Launched my independent practice as a Shopify specialist and frontend developer, creating custom e-commerce solutions and modern web experiences.</p>
+            </div>
 
-                <!-- LinkedIn Card -->
-                <div class="profile-card linkedin">
-                    <div class="profile-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me on LinkedIn to learn more about my professional journey, skills, and network.</p>
-                    <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" class="btn btn-card btn-linkedin">
-                        Visit LinkedIn <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 — 2026</div>
+                <h3 class="timeline-title">Intensive Specialized Training</h3>
+                <div class="timeline-company">Advanced Courses</div>
+                <p>Completed rigorous courses in Shopify development, frontend coding (HTML, CSS, JavaScript), and UI/UX design. Mastered Liquid, theme architecture, and modern web standards.</p>
+            </div>
 
-                <!-- Email Card -->
-                <div class="profile-card email">
-                    <div class="profile-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>Send me a direct message to discuss your project details and start a collaboration.</p>
-                    <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-card btn-email">
-                        Send an Email <i class="fas fa-paper-plane"></i>
-                    </a>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <h3 class="timeline-title">E-commerce Beginnings</h3>
+                <div class="timeline-company">Marketplace Experience</div>
+                <p>Started my entrepreneurial journey in e-commerce. This experience sparked my deep interest in the technology powering online stores.</p>
             </div>
         </div>
     </section>
@@ -778,11 +700,16 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Ready to discuss your project? Reach out to me for any questions or collaboration opportunities.</p>
+                <h2 class="section-title">04 — Contact</h2>
+                <p class="section-subtitle">Let's build something unforgettable.</p>
             </div>
             
-            <div class="contact-content">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.2rem; margin-bottom: 3rem;">
+                    I'm currently <strong style="color: var(--accent-light);">available</strong> for new projects. 
+                    Whether you need a brand new Shopify store, a custom-coded website, or an upgrade to your existing setup, I'm here to help.
+                </p>
+
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -790,18 +717,18 @@
                         <p>lilyahambardzumyan333@gmail.com</p>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Phone</h3>
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
                         <p>+374 XX XXXXXX</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Location</h3>
-                        <p>Yerevan, Armenia</p>
+                        <p>Yerevan, Armenia (GMT +4)</p>
                     </div>
                 </div>
 
-                <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-primary" style="padding: 1.1rem 3rem; font-size: 1.05rem;">
+                <a href="mailto:lilyahambardzumyan333@gmail.com" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">
                     <i class="fas fa-paper-plane"></i> Send a Message
                 </a>
             </div>
@@ -811,52 +738,33 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" title="Upwork"><i class="fas fa-briefcase"></i></a>
-            <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="Upwork"><i class="fas fa-briefcase"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="mailto:lilyahambardzumyan333@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2024 Lilya Hambardzumyan. All rights reserved.</p>
+        <p>&copy; 2026 Lilya Hambardzumyan. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-style: italic; color: var(--accent-light);">
+            "The best way to predict the future is to create it."
+        </p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Navbar background change on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(0, 0, 0, 0.98)';
-                nav.style.boxShadow = '0 4px 20px rgba(124, 58, 237, 0.2)';
-            } else {
-                nav.style.background = 'rgba(0, 0, 0, 0.95)';
-                nav.style.boxShadow = 'none';
-            }
-        });
-
-        // Scroll Animation Observer
+        // Scroll animation observer
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
@@ -872,11 +780,23 @@
         }, observerOptions);
 
         // Apply animation to elements
-        document.querySelectorAll('.feature-card, .profile-card, .contact-item, .skill-tag').forEach(el => {
+        document.querySelectorAll('.project-card, .timeline-item, .contact-item, .stat-item').forEach(el => {
             el.style.opacity = "0";
-            el.style.transform = "translateY(25px)";
+            el.style.transform = "translateY(30px)";
             el.style.transition = "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
             observer.observe(el);
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(124, 58, 237, 0.2)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.8)';
+                nav.style.boxShadow = 'none';
+            }
         });
     </script>
 </body>
