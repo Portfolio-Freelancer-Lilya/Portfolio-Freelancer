@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-bg: #ffffff; /* Սպիտակ հիմնական ֆոն */
-            --secondary-bg: #faf5ff; /* Շատ բաց մանուշակագույն երանգով ֆոն բաժինների համար */
-            --accent-color: #7C3AED; /* Վառ մանուշակագույն շեշտադրումների համար */
+            --primary-bg: #faf5ff; /* Բաց վարդագույն/մանուշակագույն ֆոն */
+            --secondary-bg: #f3e8ff; /* Ավելի մուգ բաց մանուշակագույն բաժինների համար */
+            --accent-color: #7C3AED; /* Վառ մանուշակագույն */
             --accent-hover: #6D28D9;
-            --text-primary: #3b0764; /* Մուգ մանուշակագույն գլխագրերի համար */
-            --text-secondary: #5b21b6; /* Միջին մանուշակագույն հիմնական տեքստի համար */
+            --text-primary: #6d28d9; /* Մանուշակագույն գլխագրերի համար */
+            --text-secondary: #7c3aed; /* անուշակագույն տեքստի համար */
             --card-bg: #ffffff;
-            --border-color: rgba(124, 58, 237, 0.15);
+            --border-color: rgba(124, 58, 237, 0.2);
             --upwork: #14A800;
             --linkedin: #0077b5;
             --email: #7C3AED;
@@ -47,7 +47,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(250, 245, 255, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
@@ -67,7 +67,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--accent-color); /* ՓՈՓՈԽՎԱԾ - մանուշակագույն */
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -114,7 +114,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-primary);
+            color: var(--accent-color);
             background: none;
             border: none;
         }
@@ -123,7 +123,7 @@
         .hero {
             margin-top: 0;
             padding: 10rem 2rem 8rem;
-            background: radial-gradient(circle at 50% 0%, #f3e8ff 0%, var(--primary-bg) 60%);
+            background: radial-gradient(circle at 50% 0%, #e9d5ff 0%, var(--primary-bg) 60%);
             color: var(--text-primary);
             min-height: 85vh;
             display: flex;
@@ -142,7 +142,7 @@
         .hero-badge {
             display: inline-block;
             padding: 0.5rem 1.2rem;
-            background: rgba(124, 58, 237, 0.1);
+            background: rgba(124, 58, 237, 0.15);
             border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: 50px;
             color: var(--accent-color);
@@ -285,13 +285,13 @@
         }
 
         .skill-tag {
-            background: rgba(124, 58, 237, 0.1);
+            background: rgba(124, 58, 237, 0.15);
             color: var(--accent-color);
             padding: 0.6rem 1.4rem;
             border-radius: 6px;
             font-size: 0.9rem;
             font-weight: 600;
-            border: 1px solid rgba(124, 58, 237, 0.2);
+            border: 1px solid rgba(124, 58, 237, 0.3);
             transition: all 0.3s;
         }
 
@@ -339,7 +339,7 @@
         .profile-card:hover {
             transform: translateY(-8px);
             border-color: var(--accent-color);
-            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.15);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
         }
 
         .profile-card:hover::before {
@@ -357,9 +357,9 @@
             font-size: 1.8rem;
         }
 
-        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.1); color: var(--upwork); }
-        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.1); color: var(--linkedin); }
-        .profile-card.email .profile-icon { background: rgba(124, 58, 237, 0.1); color: var(--email); }
+        .profile-card.upwork .profile-icon { background: rgba(20, 168, 0, 0.15); color: var(--upwork); }
+        .profile-card.linkedin .profile-icon { background: rgba(0, 119, 181, 0.15); color: var(--linkedin); }
+        .profile-card.email .profile-icon { background: rgba(124, 58, 237, 0.15); color: var(--email); }
 
         .profile-card h3 {
             font-size: 1.4rem;
@@ -421,7 +421,7 @@
         .contact-item:hover {
             border-color: var(--accent-color);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
         }
 
         .contact-item i {
@@ -469,7 +469,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(124, 58, 237, 0.05);
+            background: rgba(124, 58, 237, 0.1);
             border: 1px solid var(--border-color);
         }
 
@@ -505,7 +505,7 @@
                 padding: 2rem;
                 gap: 1.5rem;
                 border-bottom: 1px solid var(--border-color);
-                box-shadow: 0 10px 20px rgba(124, 58, 237, 0.1);
+                box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15);
             }
 
             .nav-links.active {
@@ -667,7 +667,7 @@
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
                         <h3>Phone</h3>
-                        <p>+374 XX XXXXXX</p> <!-- Replace with your actual number -->
+                        <p>+374 XX XXXXXX</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -723,10 +723,10 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 4px 20px rgba(124, 58, 237, 0.1)';
+                nav.style.background = 'rgba(250, 245, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(124, 58, 237, 0.15)';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.9)';
+                nav.style.background = 'rgba(250, 245, 255, 0.95)';
                 nav.style.boxShadow = 'none';
             }
         });
