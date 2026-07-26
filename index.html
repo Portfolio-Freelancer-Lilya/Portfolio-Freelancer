@@ -12,13 +12,13 @@
     <style>
         :root {
             --primary-bg: #D9BCDB; /* Բաց վարդագույն ֆոն */
-            --secondary-bg: #C9A8C8; /* Ավելի մուգ վարդագույն բաժինների համար */
-            --accent-color: #790A81; /* Մուգ մանուշակագույն տեքստ/էլեմենտների համար */
-            --accent-hover: #5D0863; /* Մուգ մանուշակագույն հովեր էֆեկտի համար */
+            --secondary-bg: #C8A2C8; /* Կիսամուգ վարդագույն բաժինների համար */
+            --accent-color: #790A81; /* Մուգ մանուշակագույն շեշտադրումների համար */
+            --accent-hover: #5C0864; /* Ավելի մուգ մանուշակագույն hover-ի համար */
             --text-primary: #790A81; /* Գլխագրերի համար */
             --text-secondary: #790A81; /* Հիմնական տեքստի համար */
-            --card-bg: #ffffff; /* Քարտերի ֆոն */
-            --border-color: rgba(121, 10, 129, 0.2); /* Սահմանագծերի համար */
+            --card-bg: #ffffff;
+            --border-color: rgba(121, 10, 129, 0.2); /* Մանուշակագույն սահմանագիծ */
             --upwork: #14A800;
             --linkedin: #0077b5;
             --email: #790A81;
@@ -123,7 +123,7 @@
         .hero {
             margin-top: 0;
             padding: 10rem 2rem 8rem;
-            background: var(--primary-bg);
+            background: radial-gradient(circle at 50% 0%, #E6D6E8 0%, var(--primary-bg) 60%);
             color: var(--text-primary);
             min-height: 85vh;
             display: flex;
@@ -164,7 +164,7 @@
         }
 
         .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #b68fc7 0%, #790A81 100%);
+            background: linear-gradient(135deg, #B880C2 0%, #790A81 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
