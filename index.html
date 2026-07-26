@@ -6,9 +6,12 @@
     <title>Անրի Սահակյանի 10-ամյակ | Ծննդյան Տոն</title>
     <meta name="description" content="Սիրով հրավիրում ենք Անրիի 10-ամյակի ծննդյան տոնակատարությանը">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -19,6 +22,7 @@
             --white: #ffffff;
             --black: #1a1a1a;
             --gold: #FFD700;
+            --accent: #00ff88;
         }
 
         * {
@@ -509,7 +513,7 @@
             
             <h1 class="hero-name">ԱՆՐԻ ՍԱՀԱԿՅԱՆ</h1>
             <div class="hero-age">10</div>
-            <p class="hero-subtitle">⚽ ԾՆՆԴՅԱՆ ՕՐ </p>
+            <p class="hero-subtitle">⚽ ԾՆՆԴՅԱՆ ՕՐ ⚽</p>
             <p class="hero-date">
                 <i class="far fa-calendar-alt"></i>
                 2026 թ. Հուլիսի 29 | 17:30
@@ -542,11 +546,15 @@
                 <span class="countdown-number" id="minutes">00</span>
                 <span class="countdown-label">ՐՈՊԵ</span>
             </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">ՎԱՅՐԿՅԱՆ</span>
+            </div>
         </div>
     </section>
 
     <section class="details-section" id="details">
-        <h2 class="section-title">📍 ՄԻՋՈՑԱՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
+        <h2 class="section-title">📍 ՄԻՋՈՑԱՌՄԱՆ ՄԱՆՐԱՄԱՍՆԵՐ</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">
@@ -573,7 +581,8 @@
                     Երևանից 25 կմ հարավ<br>
                     Աշտարակ քաղաք
                 </p>
-                <a href="https://maps.app.goo.gl/A7XSEtNrUai4ECUh9?g_st=iw" target="_blank" class="maps-btn">
+                <!-- ԱՅՍՏԵՂ Է ՓՈՓՈԽՈՒԹՅՈՒՆԸ -->
+                <a href="contact.html" class="maps-btn">
                     <i class="fas fa-location-arrow"></i> ԻՆՉՊԵ՞Ս ՀԱՍՆԵԼ
                 </a>
             </div>
@@ -582,7 +591,7 @@
 
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
-            <h2 class="section-title" style="white-space: nowrap; font-size: clamp(1.5rem, 4vw, 2.2rem);">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ </h2>
+            <h2 class="section-title" style="white-space: nowrap; font-size: clamp(1.5rem, 4vw, 2.2rem);">⚽ ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ ⚽</h2>
             <p class="rsvp-text">
                 Սիրով սպասում ենք Ձեզ մեր ծննդյան տոնակատարությանը։<br>
                 Խնդրում ենք լրացնել և մինչև <strong>Հուլիսի 28-ը</strong> ուղարկել Ձեր մասնակցության մասին։
@@ -591,7 +600,7 @@
             <form class="rsvp-form" id="rsvpForm">
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> Ձեր Անունը</label>
-                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ Արմեն Պետրոսյան" required>
+                    <input type="text" class="form-control" id="guestName" placeholder="Օրինակ՝ Արմեն Պետրոսյան" required>
                 </div>
 
                 <div class="guest-counters">
@@ -686,9 +695,9 @@
                 return;
             }
             
-            let message = `*ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՏԱՏՈՒՄ* ⚽\n\n`;
+            let message = `*ԱՆՐԻ 10-ԱՄՅԱԿԻ ՀԱՍՏԱՏՈՒՄ* ⚽\n\n`;
             message += `👤 *Անուն:* ${guestName}\n`;
-            message += `‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
+            message += `👨‍👩‍👧‍👦 *Մեծահասակներ:* ${adults}\n`;
             message += `👶 *Երեխաներ:* ${children}\n`;
             message += `👥 *Ընդհանուր:* ${adults + children} հոգի\n`;
             
