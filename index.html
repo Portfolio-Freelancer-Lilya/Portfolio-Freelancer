@@ -336,10 +336,98 @@
             margin-bottom: 1rem;
         }
 
-        /* --- Portfolio --- */
-        .portfolio {
+        /* --- Profiles Section (NEW) --- */
+        .profiles {
             background: var(--bg-card);
             border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            background: var(--bg-dark);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .profile-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .profile-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .profile-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-card:hover .profile-icon {
+            transform: scale(1.1);
+        }
+
+        .profile-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .profile-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .profile-link {
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .profile-card:hover .profile-link {
+            gap: 1rem;
+        }
+
+        /* --- Portfolio --- */
+        .portfolio {
+            background: var(--bg-dark);
         }
 
         .portfolio-grid {
@@ -505,6 +593,7 @@
                 <li><a href="#home" data-i18n="nav_home">Գլխավոր</a></li>
                 <li><a href="#about" data-i18n="nav_about">Իմ Մասին</a></li>
                 <li><a href="#expertise" data-i18n="nav_expertise">Հմտություններ</a></li>
+                <li><a href="#profiles" data-i18n="nav_profiles">Պրոֆիլներ</a></li>
                 <li><a href="#portfolio" data-i18n="nav_work">Աշխատանքներ</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Կապ</a></li>
             </ul>
@@ -536,7 +625,7 @@
                 <span class="hero-subtitle" style="text-align: left; margin-bottom: 1rem;" data-i18n="about_subtitle">01 — Իմ Մասին</span>
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;" data-i18n="about_title">Նվիրվածություն թվային արվեստին։</h2>
                 <p data-i18n="about_p1">Ես Լիլյա եմ՝ մասնագիտացված վեբ մշակող և Shopify փորձագետ Երևանից։ Իմ մոտեցումը պարզ է. յուրաքանչյուր նախագծի պետք է վերաբերվել այնպես, կարծես այն իմ սեփական բիզնեսն է։</p>
-                <p data-i18n="about_p2">Մանրուքների նկատմամբ ուշադիր եմ ,կարողանում եմ արդյունավետ կոդ գրել, բարդ պահանջները վերածում եմ էլեգանտ, օգտագործողի կարիքներին հարմարեցված թվային լուծումների։ Ես պարզապես կայքեր չեմ ստեղծում, ես ստեղծում եմ թվային ակտիվներ, որոնք աշխատում են ձեզ համար 24/7։</p>
+                <p data-i18n="about_p2">Մանրուքների նկատմամբ ուշադիր եմ, կարողանում եմ արդյունավետ կոդ գրել, բարդ պահանջները վերածում եմ էլեգանտ, օգտագործողի կարիքներին հարմարեցված թվային լուծումների։ Ես պարզապես կայքեր չեմ ստեղծում, ես ստեղծում եմ թվային ակտիվներ, որոնք աշխատում են ձեզ համար 24/7։</p>
                 <div class="signature">Lilya H.</div>
             </div>
             <div class="stats-grid reveal">
@@ -586,10 +675,44 @@
         </div>
     </section>
 
+    <!-- NEW: Profiles Section -->
+    <section class="profiles" id="profiles">
+        <div class="section-header reveal">
+            <span class="hero-subtitle" data-i18n="profiles_subtitle">03 — Պրոֆիլներ</span>
+            <h2 data-i18n="profiles_title">Կապ հաստատեք ինձ հետ</h2>
+            <div class="line"></div>
+        </div>
+        <div class="profiles-grid">
+            <!-- Upwork -->
+            <a href="https://www.upwork.com/freelancers/~0102e9bb2de9471b53?mp_source=share" target="_blank" class="profile-card reveal">
+                <i class="fas fa-briefcase profile-icon"></i>
+                <h3 data-i18n="profile_upwork">Upwork</h3>
+                <p data-i18n="profile_upwork_desc">Դիտեք իմ ավարտված նախագծերը և հաճախորդների գրախոսականները:</p>
+                <span class="profile-link" data-i18n="visit_profile">Այցելել <i class="fas fa-arrow-right"></i></span>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/lilya-hambardzumyan-109417424/" target="_blank" class="profile-card reveal">
+                <i class="fab fa-linkedin-in profile-icon"></i>
+                <h3 data-i18n="profile_linkedin">LinkedIn</h3>
+                <p data-i18n="profile_linkedin_desc">Կապ հաստատեք իմ մասնագիտական ցանցի և փորձի հետ:</p>
+                <span class="profile-link" data-i18n="visit_profile">Այցելել <i class="fas fa-arrow-right"></i></span>
+            </a>
+            
+            <!-- Email -->
+            <a href="mailto:lilyahambardzumyan333@gmail.com" class="profile-card reveal">
+                <i class="fas fa-envelope profile-icon"></i>
+                <h3 data-i18n="profile_email">Էլ. Փոստ</h3>
+                <p data-i18n="profile_email_desc">Ուղարկեք նամակ՝ քննարկելու ձեր նախագիծը և համագործակցությունը:</p>
+                <span class="profile-link" data-i18n="visit_profile">Գրել նամակ <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="section-header reveal">
-            <span class="hero-subtitle" data-i18n="port_subtitle">03 — Պորտֆոլիո</span>
+            <span class="hero-subtitle" data-i18n="port_subtitle">04 — Պորտֆոլիո</span>
             <h2 data-i18n="port_title">Ընտրված Աշխատանքներ</h2>
             <div class="line"></div>
         </div>
@@ -621,7 +744,7 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-content reveal">
-            <span class="hero-subtitle" data-i18n="cont_subtitle">04 — Կապ</span>
+            <span class="hero-subtitle" data-i18n="cont_subtitle">05 — Կապ</span>
             <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" data-i18n="cont_title">Եկեք ստեղծենք բացառիկ բան</h2>
             <p data-i18n="cont_desc">Ես ներկայումս ընդունում եմ նոր նախագծեր։ Կապ հաստատեք՝ քննարկելու, թե ինչպես կարող ենք բարձրացնել ձեր թվային ներկայությունը։</p>
             
@@ -658,6 +781,7 @@
                 nav_home: "Գլխավոր",
                 nav_about: "Իմ Մասին",
                 nav_expertise: "Հմտություններ",
+                nav_profiles: "Պրոֆիլներ",
                 nav_work: "Աշխատանքներ",
                 nav_contact: "Կապ",
                 hero_subtitle: "Պրեմիում Վեբ Մշակում",
@@ -680,7 +804,16 @@
                 exp_2_desc: "Մաքուր, սեմանտիկ HTML5, ժամանակակից CSS3 և ինտերակտիվ JavaScript՝ դիզայնը կյանքի կոչելու համար։",
                 exp_3_title: "UI/UX Դիզայն",
                 exp_3_desc: "Ինտուիտիվ, գեղագիտորեն գրավիչ ինտերֆեյսների ստեղծում, որոնք օգտատերերին հեշտությամբ տանում են դեպի նպատակը։",
-                port_subtitle: "03 — Պորտֆոլիո",
+                profiles_subtitle: "03 — Պրոֆիլներ",
+                profiles_title: "Կապ հաստատեք ինձ հետ",
+                profile_upwork: "Upwork",
+                profile_upwork_desc: "Դիտեք իմ ավարտված նախագծերը և հաճախորդների գրախոսականները:",
+                profile_linkedin: "LinkedIn",
+                profile_linkedin_desc: "Կապ հաստատեք իմ մասնագիտական ցանցի և փորձի հետ:",
+                profile_email: "Էլ. Փոստ",
+                profile_email_desc: "Ուղարկեք նամակ՝ քննարկելու ձեր նախագիծը և համագործակցությունը:",
+                visit_profile: "Այցելել <i class='fas fa-arrow-right'></i>",
+                port_subtitle: "04 — Պորտֆոլիո",
                 port_title: "Ընտրված Աշխատանքներ",
                 port_1_title: "E-Commerce Հարթակ",
                 port_1_desc: "Shopify / Custom Թեմա",
@@ -688,7 +821,7 @@
                 port_2_desc: "HTML / CSS / JS",
                 port_3_title: "Ինտերակտիվ Ապրանքային Quiz",
                 port_3_desc: "Shopify / JavaScript",
-                cont_subtitle: "04 — Կապ",
+                cont_subtitle: "05 — Կապ",
                 cont_title: "Եկեք ստեղծենք բացառիկ բան",
                 cont_desc: "Ես ներկայումս ընդունում եմ նոր նախագծեր։ Կապ հաստատեք՝ քննարկելու, թե ինչպես կարող ենք բարձրացնել ձեր թվային ներկայությունը։",
                 location: "Երևան, Հայաստան",
@@ -700,6 +833,7 @@
                 nav_home: "Home",
                 nav_about: "About",
                 nav_expertise: "Expertise",
+                nav_profiles: "Profiles",
                 nav_work: "Work",
                 nav_contact: "Contact",
                 hero_subtitle: "Premium Web Development",
@@ -722,7 +856,16 @@
                 exp_2_desc: "Clean, semantic HTML5, modern CSS3, and interactive JavaScript to bring designs to life flawlessly.",
                 exp_3_title: "UI/UX Design",
                 exp_3_desc: "Creating intuitive, aesthetically pleasing interfaces that guide users seamlessly toward their goals.",
-                port_subtitle: "03 — Portfolio",
+                profiles_subtitle: "03 — Profiles",
+                profiles_title: "Connect With Me",
+                profile_upwork: "Upwork",
+                profile_upwork_desc: "Explore my completed projects and client reviews.",
+                profile_linkedin: "LinkedIn",
+                profile_linkedin_desc: "Connect with my professional network and experience.",
+                profile_email: "Email",
+                profile_email_desc: "Send a message to discuss your project and collaboration.",
+                visit_profile: "Visit <i class='fas fa-arrow-right'></i>",
+                port_subtitle: "04 — Portfolio",
                 port_title: "Selected Works",
                 port_1_title: "E-Commerce Platform",
                 port_1_desc: "Shopify / Custom Theme",
@@ -730,7 +873,7 @@
                 port_2_desc: "HTML / CSS / JS",
                 port_3_title: "Interactive Product Quiz",
                 port_3_desc: "Shopify / JavaScript",
-                cont_subtitle: "04 — Contact",
+                cont_subtitle: "05 — Contact",
                 cont_title: "Let's Create Something Exceptional",
                 cont_desc: "I am currently accepting new projects. Reach out to discuss how we can elevate your digital presence.",
                 location: "Yerevan, Armenia",
@@ -742,6 +885,7 @@
                 nav_home: "Главная",
                 nav_about: "Обо мне",
                 nav_expertise: "Навыки",
+                nav_profiles: "Профили",
                 nav_work: "Работы",
                 nav_contact: "Контакты",
                 hero_subtitle: "Премиум Веб-разработка",
@@ -764,7 +908,16 @@
                 exp_2_desc: "Чистый, семантический HTML5, современный CSS3 и интерактивный JavaScript для безупречной реализации дизайна.",
                 exp_3_title: "UI/UX Дизайн",
                 exp_3_desc: "Создание интуитивно понятных, эстетически приятных интерфейсов, которые плавно ведут пользователей к их целям.",
-                port_subtitle: "03 — Портфолио",
+                profiles_subtitle: "03 — Профили",
+                profiles_title: "Свяжитесь со мной",
+                profile_upwork: "Upwork",
+                profile_upwork_desc: "Ознакомьтесь с моими завершенными проектами и отзывами клиентов.",
+                profile_linkedin: "LinkedIn",
+                profile_linkedin_desc: "Подключайтесь к моей профессиональной сети и опыту.",
+                profile_email: "Эл. почта",
+                profile_email_desc: "Отправьте сообщение, чтобы обсудить ваш проект и сотрудничество.",
+                visit_profile: "Перейти <i class='fas fa-arrow-right'></i>",
+                port_subtitle: "04 — Портфолио",
                 port_title: "Избранные работы",
                 port_1_title: "E-Commerce Платформа",
                 port_1_desc: "Shopify / Кастомная тема",
@@ -772,7 +925,7 @@
                 port_2_desc: "HTML / CSS / JS",
                 port_3_title: "Интерактивный Квиз",
                 port_3_desc: "Shopify / JavaScript",
-                cont_subtitle: "04 — Контакты",
+                cont_subtitle: "05 — Контакты",
                 cont_title: "Давайте создадим что-то исключительное",
                 cont_desc: "В настоящее время я принимаю новые проекты. Свяжитесь со мной, чтобы обсудить, как мы можем улучшить ваше цифровое присутствие.",
                 location: "Ереван, Армения",
@@ -784,36 +937,24 @@
 
         // --- Language Switcher Logic ---
         function changeLanguage(lang) {
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
-
-            // Update all text elements
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
                     element.innerHTML = translations[lang][key];
                 }
             });
-
-            // Update active button state
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
-
-            // Save preference to localStorage (optional but good UX)
             localStorage.setItem('preferredLang', lang);
         }
 
-        // Initialize language on load
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLang') || 'hy';
-            // Find the button and trigger click or manually set
             const activeBtn = document.querySelector(`.lang-btn[onclick="changeLanguage('${savedLang}')"]`);
-            if (activeBtn) {
-                // Simulate click to run the function
-                activeBtn.click();
-            }
+            if (activeBtn) activeBtn.click();
         });
 
         // --- Scroll Reveal Animation ---
@@ -829,7 +970,7 @@
             });
         };
         window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Trigger once on load
+        revealOnScroll();
 
         // --- Smooth Scroll ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
